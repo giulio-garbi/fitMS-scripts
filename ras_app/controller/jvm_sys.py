@@ -7,6 +7,7 @@ from pymemcache.client.base import Client
 import os
 import psutil
 import requests as req
+import sys
 
 
 class jvm_sys(system_interface):
@@ -257,7 +258,8 @@ class jvm_sys(system_interface):
             
 if __name__ == "__main__":
     try:
-        isCpu=True
+        nCli = int(sys.argv[1]) if len(sys.argv)>=2 else 100
+        isCpu=False
         jvm_sys = jvm_sys("../",isCpu)
         jvm_sys.setCpuset([2],"tier1") 
         
@@ -265,7 +267,7 @@ if __name__ == "__main__":
             
             
             jvm_sys.startSys(isCpu)
-            jvm_sys.startClient(100)
+            jvm_sys.startClient(nCli)
             
             g = Client("localhost:11211")
             g.set("t1_hw","10")
