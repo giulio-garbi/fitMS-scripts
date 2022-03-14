@@ -261,7 +261,8 @@ if __name__ == "__main__":
         nCli = int(sys.argv[1]) if len(sys.argv)>=2 else 100
         isCpu=False
         jvm_sys = jvm_sys("../",isCpu)
-        jvm_sys.setCpuset([2],"tier1") 
+        if isCpu:
+            jvm_sys.setCpuset([2],"tier1") 
         
         for i in range(1):
             
