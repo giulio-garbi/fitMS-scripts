@@ -248,17 +248,23 @@ class jvm_sys(system_interface):
     def getRT(self,monitor):
         #qui si deve estendere per prendere tutti i response time
         RT=monitor.get("rt_t1")
+        CIlow=monitor.get("lowCI_rt_t1")
+        CIup=monitor.get("upCI_rt_t1")
         if(RT is not None):
             RT=float(RT.decode('UTF-8'))
+        if(CIlow is not None):
+            CIlow=float(CIlow.decode('UTF-8'))
+        if(CIup is not None):
+            CIup=float(CIup.decode('UTF-8'))
         
         
-        return RT
+        return [RT, CIlow, CIup]
         
        
             
 if __name__ == "__main__":
     try:
-        nCli = int(sys.argv[1]) if len(sys.argv)>=2 else 100
+        nCli = int(sys.argv[1])
         isCpu=False
         jvm_sys = jvm_sys("../",isCpu)
         if isCpu:
@@ -285,10 +291,11 @@ if __name__ == "__main__":
                 # if(isCpu):
                 #     jvm_sys.setU(10,"tier1")
                 
-                RT=jvm_sys.getRT(mnt)
-                print(RT/10**9)
+                outs=jvm_sys.getRT(mnt)
+                RT = outs[0]/10**9
+                CI = (outs[1]/10**9, outs[2]/10**9)
+                print(i, RT, CI)
                 time.sleep(0.3)
-                print(i)
             
            
             mnt.close()
