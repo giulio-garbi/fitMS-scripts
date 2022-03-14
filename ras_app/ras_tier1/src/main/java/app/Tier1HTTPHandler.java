@@ -70,6 +70,7 @@ public class Tier1HTTPHandler extends TierHttpHandler {
 
 		this.getLqntask().getRts().addSample(new rtSample(Long.valueOf(this.getLqntask().getEnqueueTime().get(params.get("id"))),
 				System.nanoTime()));
+		this.measureEgress();
 	}
 
 	@Override
