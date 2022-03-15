@@ -317,8 +317,8 @@ if __name__ == "__main__":
                 
                 out=jvm_sys.getRT(mnt)
                 acceptableStats = out.isAcceptable(minBatches=31, maxRelError=0.05)
-                if acceptableStats:
-                    print(nCli, out.mean, out.CI, out.Nbatches)
+                #if acceptableStats:
+                print(acceptableStats, nCli, out.mean, out.CI, out.Nbatches)
                 time.sleep(0.3)
             
            
