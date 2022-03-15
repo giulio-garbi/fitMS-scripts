@@ -282,7 +282,13 @@ class jvm_sys(system_interface):
 if __name__ == "__main__":
     try:
         nCli = int(sys.argv[1])
-        isCpu=False
+        mre = float(sys.argv[2])
+        if len(sys.argv)<4:
+            isCpu = False
+        elif sys.argv[3] == 'cpu':
+            isCpu = True
+        else:
+            isCpu = False
         jvm_sys = jvm_sys("../",isCpu)
         if isCpu:
             jvm_sys.setCpuset([2],"tier1") 
@@ -311,7 +317,8 @@ if __name__ == "__main__":
                 
                 out=jvm_sys.getRT(mnt)
                 acceptableStats = out.isAcceptable(minBatches=31, maxRelError=0.05)
-                print(nCli, out.mean, out.CI, out.Nbatches, 'stop?', acceptableStats)
+                if acceptableStats:
+                    print(nCli, out.mean, out.CI, out.Nbatches)
                 time.sleep(0.3)
             
            
