@@ -8,7 +8,6 @@ import os
 import psutil
 import requests as req
 import sys
-from keras.backend import mean
 
 class ConfInterval:
     def __init__(self, mean, CI, Nbatches):
