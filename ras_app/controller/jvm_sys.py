@@ -23,6 +23,11 @@ class ConfInterval:
         relError = absError/abs(self.mean)
         
         return self.Nbatches >= minBatches and absError <= maxAbsError and relError <= maxRelError
+    
+    def getRelError(self):
+        absError = abs(self.CI[1]-self.mean)
+        relError = absError/abs(self.mean)
+        return relError 
         
 
 class jvm_sys(system_interface):
@@ -318,7 +323,7 @@ if __name__ == "__main__":
                 out=jvm_sys.getRT(mnt)
                 acceptableStats = out.isAcceptable(minBatches=31, maxRelError=mre)
                 #if acceptableStats:
-                print(acceptableStats, nCli, out.mean, out.CI, out.Nbatches)
+                print(acceptableStats, nCli, out.mean, out.CI, out.Nbatches, 'max(CI)-mean:', out.getRelError*100,'%')
                 time.sleep(0.3)
             
            
