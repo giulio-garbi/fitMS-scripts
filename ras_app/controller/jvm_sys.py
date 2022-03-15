@@ -316,7 +316,7 @@ if __name__ == "__main__":
                 #     jvm_sys.setU(10,"tier1")
                 
                 out=jvm_sys.getRT(mnt)
-                acceptableStats = out.isAcceptable(minBatches=31, maxRelError=0.05)
+                acceptableStats = out.isAcceptable(minBatches=31, maxRelError=mre)
                 #if acceptableStats:
                 print(acceptableStats, nCli, out.mean, out.CI, out.Nbatches)
                 time.sleep(0.3)
