@@ -8,7 +8,23 @@ import os
 import psutil
 import requests as req
 import sys
+from keras.backend import mean
 
+class ConfInterval:
+    def __init__(self, mean, CI, Nbatches):
+        self.mean = mean
+        self.CI = CI
+        self.Nbatches = Nbatches
+        
+    def isAcceptable(self, minBatches=30, maxAbsError=None, maxRelError=None):
+        maxAbsError = float('inf') if maxAbsError is None else maxAbsError
+        maxRelError = float('inf') if maxRelError is None else maxRelError
+        
+        absError = abs(self.CI[1]-self.mean)
+        relError = absError/abs(self.mean)
+        
+        return self.Nbatches >= minBatches and absError <= maxAbsError and relError <= maxRelError
+        
 
 class jvm_sys(system_interface):
     
@@ -250,15 +266,17 @@ class jvm_sys(system_interface):
         RT=monitor.get("rt_t1")
         CIlow=monitor.get("lowCI_rt_t1")
         CIup=monitor.get("upCI_rt_t1")
+        N=monitor.get("batches_rt_t1")
         if(RT is not None):
-            RT=float(RT.decode('UTF-8'))
+            RT=float(RT.decode('UTF-8'))/10**9
         if(CIlow is not None):
-            CIlow=float(CIlow.decode('UTF-8'))
+            CIlow=float(CIlow.decode('UTF-8'))/10**9
         if(CIup is not None):
-            CIup=float(CIup.decode('UTF-8'))
+            CIup=float(CIup.decode('UTF-8'))/10**9
+        if(N is not None):
+            N=int(N.decode('UTF-8'))
         
-        
-        return [RT, CIlow, CIup]
+        return ConfInterval(RT, (CIlow, CIup), N)
         
        
             
@@ -283,7 +301,8 @@ if __name__ == "__main__":
             mnt = Client("localhost:11211")
             
             X=[]
-            for i in range(10000):
+            acceptableStats = False
+            while not acceptableStats:
                 # state=jvm_sys.getstate(mnt)
                 # print(state[0],i)
                 # X.append(state[0][0])
@@ -291,10 +310,9 @@ if __name__ == "__main__":
                 # if(isCpu):
                 #     jvm_sys.setU(10,"tier1")
                 
-                outs=jvm_sys.getRT(mnt)
-                RT = outs[0]/10**9
-                CI = (outs[1]/10**9, outs[2]/10**9)
-                print(i, RT, CI)
+                out=jvm_sys.getRT(mnt)
+                acceptableStats = out.isAcceptable(minBatches=31, maxRelError=0.05)
+                print(i, out.mean, out.CI, out.Nbatches, 'stop?', acceptableStats)
                 time.sleep(0.3)
             
            
