@@ -294,7 +294,7 @@ if __name__ == "__main__":
             jvm_sys.startClient(nCli)
             
             g = Client("localhost:11211")
-            g.set("t1_hw","10")
+            g.set("t1_hw","1")
             #jvm_sys.setU(1.0,"tier1")
             #jvm_sys.setCpuset([2],"tier1")    
             mnt = Client("localhost:11211")
@@ -311,7 +311,7 @@ if __name__ == "__main__":
                 
                 out=jvm_sys.getRT(mnt)
                 acceptableStats = out.isAcceptable(minBatches=31, maxRelError=0.05)
-                print(i, out.mean, out.CI, out.Nbatches, 'stop?', acceptableStats)
+                print(nCli, out.mean, out.CI, out.Nbatches, 'stop?', acceptableStats)
                 time.sleep(0.3)
             
            
