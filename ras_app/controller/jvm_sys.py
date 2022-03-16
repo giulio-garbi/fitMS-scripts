@@ -331,15 +331,8 @@ if __name__ == "__main__":
             mnt.close()
             
             #print(np.mean(X))
-            
-            jvm_sys.stopClient()
-            jvm_sys.stopSystem()
-        
-    except Exception as e:
-        pass
-        print(e)
+    finally:
         jvm_sys.stopClient()
         jvm_sys.stopSystem()
-    finally:
         g.close()
         
