@@ -324,7 +324,7 @@ if __name__ == "__main__":
                 acceptableStats = out.isAcceptable(minBatches=31, maxRelError=mre)
                 #if acceptableStats:
                 print(acceptableStats, nCli, out.mean, out.CI, out.Nbatches, 'max(CI)-mean:', out.getRelError*100,'%')
-                time.sleep(0.3)
+                time.sleep(1)
             
            
             mnt.close()
