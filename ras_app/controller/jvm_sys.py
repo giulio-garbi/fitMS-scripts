@@ -102,7 +102,8 @@ class jvm_sys(system_interface):
             self.waitTier1()
             self.sys.append(self.findProcessIdByName("tier1-0.0.1")[0])
         else:
-            subprocess.Popen(["cgexec", "-g", "cpu,cpuset:t1", self.javaCmd, "-Xmx4G",
+            # "cgexec", "-g", "cpu,cpuset:t1", 
+            subprocess.Popen([self.javaCmd, "-Xmx4G",
                              "-Djava.compiler=NONE", "-jar","-Xint",
                              '%sras_tier1/target/ras_tier1-0.0.1-SNAPSHOT-jar-with-dependencies.jar' % (self.sysRootPath),
                              '--cpuEmu', "%d" % (cpuEmu), '--jedisHost', 'localhost'])
