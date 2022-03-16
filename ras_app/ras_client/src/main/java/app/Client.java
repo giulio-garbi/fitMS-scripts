@@ -17,6 +17,7 @@ import org.apache.commons.math3.distribution.ExponentialDistribution;
 
 import Server.MCAtomicUpdater;
 import Server.SimpleTask;
+import monitoring.rtSample;
 import net.spy.memcached.MemcachedClient;
 
 public class Client implements Runnable {
@@ -55,7 +56,7 @@ public class Client implements Runnable {
 
 			while ((this.memcachedClient.get("stop") == null
 					|| !String.valueOf(this.memcachedClient.get("stop")).equals("1")) && !this.dying) {
-
+				long start = System.nanoTime();
 //				String thinking = String.valueOf(this.memcachedClient.get("think"));
 
 //				SimpleTask.getLogger().debug(String.format("stop=%s", String.valueOf(memcachedClient.get("stop"))));
@@ -74,6 +75,7 @@ public class Client implements Runnable {
 //					Client.toKill.decrementAndGet();
 //					this.dying = true;
 //				}
+				this.task.getRts().addSample(new rtSample(start, System.nanoTime()));
 			}
 			MCAtomicUpdater.AtomicIncr(this.memcachedClient, -1, "think", 100);
 			SimpleTask.getLogger().debug(String.format(" user %s stopped", this.clietId));

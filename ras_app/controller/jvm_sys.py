@@ -265,12 +265,12 @@ class jvm_sys(system_interface):
     
     
     
-    def getRT(self,monitor):
+    def getRT(self,monitor,taskname):
         #qui si deve estendere per prendere tutti i response time
-        RT=monitor.get("rt_t1")
-        CIlow=monitor.get("lowCI_rt_t1")
-        CIup=monitor.get("upCI_rt_t1")
-        N=monitor.get("batches_rt_t1")
+        RT=monitor.get("rt_"+taskname)
+        CIlow=monitor.get("lowCI_rt_"+taskname)
+        CIup=monitor.get("upCI_rt_"+taskname)
+        N=monitor.get("batches_rt_"+taskname)
         if(RT is not None):
             RT=float(RT.decode('UTF-8'))/10**9
         if(CIlow is not None):
@@ -321,10 +321,14 @@ if __name__ == "__main__":
                 # if(isCpu):
                 #     jvm_sys.setU(10,"tier1")
                 
-                out=jvm_sys.getRT(mnt)
-                acceptableStats = out.isAcceptable(minBatches=31, maxRelError=mre)
+                outT1=jvm_sys.getRT(mnt,"t1")
+                outCli=jvm_sys.getRT(mnt,"Client")
+                acceptableStats = outT1.isAcceptable(minBatches=31, maxRelError=mre) and \
+                    outCli.isAcceptable(minBatches=31, maxRelError=mre)
                 #if acceptableStats:
-                print(acceptableStats, nCli, out.mean, out.CI, out.Nbatches, 'max(CI)-mean:', out.getRelError()*100,'%')
+                print(acceptableStats, nCli)
+                print("t1", outT1.mean, outT1.CI, outT1.Nbatches, 'max(CI)-mean:', outT1.getRelError()*100,'%')
+                print("Client", outCli.mean, outCli.CI, outCli.Nbatches, 'max(CI)-mean:', outCli.getRelError()*100,'%')
                 sys.stdout.flush()
                 time.sleep(1)
             
