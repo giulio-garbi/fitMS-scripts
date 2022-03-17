@@ -5,5 +5,5 @@
     <artifactId>ras_app</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>ras_client</artifactId>
+  <artifactId>ras_teastore</artifactId>
 </project>
