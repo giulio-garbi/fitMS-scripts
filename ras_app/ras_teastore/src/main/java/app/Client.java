@@ -48,7 +48,7 @@ public class Client implements Runnable {
 			HttpClient client = null;
 			HttpRequest request = null;
 			client = HttpClient.newBuilder().version(Version.HTTP_1_1).build();
-			request = HttpRequest.newBuilder().uri(URI.create("http://" + Client.getWebuiHost() + ":/tools.descartes.teastore.webui/")).build();
+			request = HttpRequest.newBuilder().uri(URI.create("http://" + Client.getWebuiHost() + "/tools.descartes.teastore.webui/")).build();
 
 			this.memcachedClient.set("started", 3600, String.valueOf(1)).get();
 			MCAtomicUpdater.AtomicIncr(this.memcachedClient, 1, "think", 100);

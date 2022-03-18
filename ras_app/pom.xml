@@ -9,6 +9,7 @@
 	<modules>
 		<module>ras_tier1</module>
 		<module>ras_client</module>
+		<module>ras_teastore</module>
 	</modules>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
