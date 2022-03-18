@@ -8,6 +8,7 @@ import os
 import psutil
 import requests as req
 import sys
+import docker
 
 class ConfInterval:
     def __init__(self, mean, CI, Nbatches):
@@ -40,6 +41,8 @@ class ts_sys(system_interface):
     period = 1000
     keys = ["think", "e1_bl", "e1_ex", "t1_hw"]
     javaCmd=None
+    dck_client = None
+    containers = None
     
     def __init__(self, sysRootPath):
         
@@ -51,6 +54,7 @@ class ts_sys(system_interface):
         self.sysRootPath = sysRootPath
         #if(isCpu):
         #    self.initCgroups()
+        self.dck_client = docker.from_env()
     
     def startClient(self, pop):
         r=Client("localhost:11211")
@@ -84,6 +88,19 @@ class ts_sys(system_interface):
                 self.client.kill()
                 self.client=None
         
+    def getNetworkCne(self):
+        net=None
+        try:
+            net=self.dck_client.networks.get("teastore-network")
+        except docker.errors.NotFound:
+            net=self.dck_client.networks.create("teastore-network")
+        return net
+    
+    def waitRunning(self,cnt):
+        while(cnt.status!="running"):
+            time.sleep(0.2)
+            cnt.reload()
+        print("Cnt %s is running"%(cnt.name))
     
     def startSys(self):
         #cpuEmu = 0 if(isCpu) else 1
@@ -93,27 +110,47 @@ class ts_sys(system_interface):
         self.waitMemCached()
         self.sys.append(self.findProcessIdByName("memcached")[0])
         
-        if 0<0:
-            if(not isCpu):
-                subprocess.Popen([self.javaCmd, "-Xmx4G",
-                                 "-Djava.compiler=NONE", "-jar",
-                                 '%sras_tier1/target/ras_tier1-0.0.1-SNAPSHOT-jar-with-dependencies.jar' % (self.sysRootPath),
-                                 '--cpuEmu', "%d" % (cpuEmu), '--jedisHost', 'localhost'])
-                
-                self.waitTier1()
-                self.sys.append(self.findProcessIdByName("tier1-0.0.1")[0])
-            else:
-                # "cgexec", "-g", "cpu,cpuset:t1", 
-                subprocess.Popen([self.javaCmd, "-Xmx4G",
-                                 "-Djava.compiler=NONE", "-jar","-Xint",
-                                 '%sras_tier1/target/ras_tier1-0.0.1-SNAPSHOT-jar-with-dependencies.jar' % (self.sysRootPath),
-                                 '--cpuEmu', "%d" % (cpuEmu), '--jedisHost', 'localhost'])
-                
-                # subprocess.Popen([self.javaCmd, "-Xmx4G","-jar",
-                #                  '%sras_tier1/target/ras_tier1-0.0.1-SNAPSHOT-jar-with-dependencies.jar' % (self.sysRootPath),
-                #                  '--cpuEmu', "%d" % (cpuEmu), '--jedisHost', 'localhost'])
-                self.waitTier1()
-                self.sys.append(self.findProcessIdByName("tier1-0.0.1")[0])
+        self.containers = []
+        self.containers.append(self.dck_client.containers.run(image="giuliogarbi/teastore-registry",
+                              auto_remove=True,
+                              detach=True,
+                              name="registry",
+                              network="teastore-network",
+                              stop_signal="SIGINT"))
+        self.waitRunning(self.containers[-1])
+        self.containers.append(self.dck_client.containers.run(image="giuliogarbi/teastore-db",
+                              auto_remove=True,
+                              detach=True,
+                              name="db",
+                              network="teastore-network",
+                              stop_signal="SIGINT"))
+        self.waitRunning(self.containers[-1])
+        self.containers.append(self.dck_client.containers.run(image="giuliogarbi/teastore-persistence",
+                              auto_remove=True,
+                              detach=True,
+                              name="persistence",
+                              network="teastore-network",
+                              stop_signal="SIGINT",
+                              environment={"HOST_NAME":"persistence", "REGISTRY_HOST": "registry", "DB_HOST": "db", "DB_PORT": "3306"}))
+        self.waitRunning(self.containers[-1])
+        for h in ["auth","image","recommender"]:
+            self.containers.append(self.dck_client.containers.run(image="giuliogarbi/teastore-"+h,
+                                  auto_remove=True,
+                                  detach=True,
+                                  name=h,
+                                  network="teastore-network",
+                                  stop_signal="SIGINT",
+                                  environment={"HOST_NAME":h, "REGISTRY_HOST": "registry"}))
+            self.waitRunning(self.containers[-1])
+        self.containers.append(self.dck_client.containers.run(image="giuliogarbi/teastore-webui",
+                                  auto_remove=True,
+                                  detach=True,
+                                  name="webui",
+                                  network="teastore-network",
+                                  stop_signal="SIGINT",
+                                  ports={"8080/tcp":8080},
+                                  environment={"HOST_NAME":"webui", "REGISTRY_HOST": "registry"}))
+        self.waitRunning(self.containers[-1])
     
     def findProcessIdByName(self,processName):
         
@@ -140,6 +177,10 @@ class ts_sys(system_interface):
         return listOfProcessObjects;
     
     def stopSystem(self):
+        if(self.containers is not None):
+            for c in self.containers:
+                print("killing %s"%(c.name))
+                c.kill()
         if(self.sys is not None):
             for i in range(len(self.sys),0,-1):
                 proc=self.sys[i-1]
