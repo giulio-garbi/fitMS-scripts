@@ -214,15 +214,13 @@ class ts_sys(system_interface):
         
         return [astate,estate]
     
-    def waitTier1(self):
+    def waitWebui(self, webui_addr):
         connected=False
         limit=1000
         atpt=0
-        base_client = Client(("localhost", 11211))
-        base_client.set("test_ex","1")
         while(atpt<limit and not connected):
             try:
-                r = req.get('http://localhost:3000?entry=e1&snd=test')
+                r = req.get('http://'+webui_addr+"/tools.descartes.teastore.webui/")
                 connected=True
                 break
             except:
@@ -230,9 +228,8 @@ class ts_sys(system_interface):
             finally:
                 atpt+=1
         
-        base_client.close()
         if(connected):
-            print("connected to tier1")
+            print("connected to webui")
         else:
             raise ValueError("error while connceting to tier1")
     
@@ -306,8 +303,6 @@ class ts_sys(system_interface):
         self.cgroups[cnt_name]["cg"]["cpuset"].controller.cpus=cpus
         self.cgroups[cnt_name]["cg"]["cpuset"].controller.mems=[0]
     
-    
-    
     def getRT(self,monitor,taskname):
         #qui si deve estendere per prendere tutti i response time
         RT=monitor.get("rt_"+taskname)
@@ -338,6 +333,7 @@ if __name__ == "__main__":
             
             
             ts_sys.startSys()
+            ts_sys.waitWebui('localhost:8080')
             ts_sys.startClient(nCli)
             
             g = Client("localhost:11211")
