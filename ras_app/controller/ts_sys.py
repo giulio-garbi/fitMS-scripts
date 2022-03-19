@@ -9,26 +9,11 @@ import psutil
 import requests as req
 import sys
 import docker
-
-class ConfInterval:
-    def __init__(self, mean, CI, Nbatches):
-        self.mean = mean
-        self.CI = CI
-        self.Nbatches = Nbatches
-        
-    def isAcceptable(self, minBatches=30, maxAbsError=None, maxRelError=None):
-        maxAbsError = float('inf') if maxAbsError is None else maxAbsError
-        maxRelError = float('inf') if maxRelError is None else maxRelError
-        
-        absError = abs(self.CI[1]-self.mean)
-        relError = absError/abs(self.mean)
-        
-        return self.Nbatches >= minBatches and absError <= maxAbsError and relError <= maxRelError
-    
-    def getRelError(self):
-        absError = abs(self.CI[1]-self.mean)
-        relError = absError/abs(self.mean)
-        return relError 
+import tarfile
+from io import BytesIO
+import re
+from stats import ConfInterval
+from log_handler import LogHandler
         
 
 class ts_sys(system_interface):
@@ -44,6 +29,8 @@ class ts_sys(system_interface):
     dck_client = None
     containers = None
     
+    systemLogHandler = None
+    
     def __init__(self, sysRootPath):
         
         try:
@@ -52,6 +39,7 @@ class ts_sys(system_interface):
             raise ValueError("Need to setup JAVA_HOME env variable")
         
         self.sysRootPath = sysRootPath
+        self.systemLogHandler = LogHandler(30)
         #if(isCpu):
         #    self.initCgroups()
         self.dck_client = docker.from_env()
@@ -110,39 +98,39 @@ class ts_sys(system_interface):
         self.waitMemCached()
         self.sys.append(self.findProcessIdByName("memcached")[0])
         
-        self.containers = []
-        self.containers.append(self.dck_client.containers.run(image="giuliogarbi/teastore-registry",
+        self.containers = dict()
+        self.containers["registry"] = (self.dck_client.containers.run(image="giuliogarbi/teastore-registry",
                               auto_remove=True,
                               detach=True,
                               name="registry",
                               network="teastore-network",
                               stop_signal="SIGINT"))
-        self.waitRunning(self.containers[-1])
-        self.containers.append(self.dck_client.containers.run(image="giuliogarbi/teastore-db",
+        self.waitRunning(self.containers["registry"])
+        self.containers["db"] = (self.dck_client.containers.run(image="giuliogarbi/teastore-db",
                               auto_remove=True,
                               detach=True,
                               name="db",
                               network="teastore-network",
                               stop_signal="SIGINT"))
-        self.waitRunning(self.containers[-1])
-        self.containers.append(self.dck_client.containers.run(image="giuliogarbi/teastore-persistence",
+        self.waitRunning(self.containers["db"])
+        self.containers["persistence"] = (self.dck_client.containers.run(image="giuliogarbi/teastore-persistence",
                               auto_remove=True,
                               detach=True,
                               name="persistence",
                               network="teastore-network",
                               stop_signal="SIGINT",
                               environment={"HOST_NAME":"persistence", "REGISTRY_HOST": "registry", "DB_HOST": "db", "DB_PORT": "3306"}))
-        self.waitRunning(self.containers[-1])
+        self.waitRunning(self.containers["persistence"])
         for h in ["auth","image","recommender"]:
-            self.containers.append(self.dck_client.containers.run(image="giuliogarbi/teastore-"+h,
+            self.containers[h] = (self.dck_client.containers.run(image="giuliogarbi/teastore-"+h,
                                   auto_remove=True,
                                   detach=True,
                                   name=h,
                                   network="teastore-network",
                                   stop_signal="SIGINT",
                                   environment={"HOST_NAME":h, "REGISTRY_HOST": "registry"}))
-            self.waitRunning(self.containers[-1])
-        self.containers.append(self.dck_client.containers.run(image="giuliogarbi/teastore-webui",
+            self.waitRunning(self.containers[h])
+        self.containers["webui"] = (self.dck_client.containers.run(image="giuliogarbi/teastore-webui",
                                   auto_remove=True,
                                   detach=True,
                                   name="webui",
@@ -150,7 +138,7 @@ class ts_sys(system_interface):
                                   stop_signal="SIGINT",
                                   ports={"8080/tcp":8080},
                                   environment={"HOST_NAME":"webui", "REGISTRY_HOST": "registry"}))
-        self.waitRunning(self.containers[-1])
+        self.waitRunning(self.containers["webui"])
     
     def findProcessIdByName(self,processName):
         
@@ -178,7 +166,7 @@ class ts_sys(system_interface):
     
     def stopSystem(self):
         if(self.containers is not None):
-            for c in self.containers:
+            for c in self.containers.values():
                 print("killing %s"%(c.name))
                 c.kill()
         if(self.sys is not None):
@@ -215,21 +203,24 @@ class ts_sys(system_interface):
         return [astate,estate]
     
     def waitWebui(self, webui_addr):
-        connected=False
-        limit=1000
+        print("waitig for webui ready")
+        limitTrials = 10000
+        limitSuccess = 10
         atpt=0
-        while(atpt<limit and not connected):
+        succ=0
+        while(atpt<limitTrials and succ < limitSuccess):
             try:
                 r = req.get('http://'+webui_addr+"/tools.descartes.teastore.webui/")
-                connected=True
-                break
+                succ += 1
+                print("webui replies")
+                time.sleep(1)
             except:
-                time.sleep(0.2)
+                time.sleep(1)
             finally:
                 atpt+=1
         
-        if(connected):
-            print("connected to webui")
+        if(succ >= limitSuccess):
+            print("webui is ready")
         else:
             raise ValueError("error while connceting to tier1")
     
@@ -302,6 +293,28 @@ class ts_sys(system_interface):
     
         self.cgroups[cnt_name]["cg"]["cpuset"].controller.cpus=cpus
         self.cgroups[cnt_name]["cg"]["cpuset"].controller.mems=[0]
+        
+    
+    def getLogs(self):
+        logs = dict()
+        for name in ["persistence","auth","image","webui","recommender"]:
+            c = self.containers[name]
+            logsTxt = []
+            try:
+                bits, stat = c.get_archive("/usr/local/tomcat/accesslogs")
+                with BytesIO() as f:
+                    for chunk in bits:
+                        f.write(chunk)
+                    f.seek(0)
+                    with tarfile.open(fileobj=f, mode='r') as tf:
+                        logfiles = [fname for fname in tf.getnames() if re.match(r'accesslogs/.+', fname)]
+                        for fname in logfiles:
+                            with tf.extractfile(fname) as logfile:
+                                logsTxt.append((logfile.read()))
+            except docker.errors.NotFound:
+                pass
+            logs[name] = logsTxt
+        return logs
     
     def getRT(self,monitor,taskname):
         #qui si deve estendere per prendere tutti i response time
@@ -336,6 +349,8 @@ if __name__ == "__main__":
             ts_sys.waitWebui('localhost:8080')
             ts_sys.startClient(nCli)
             
+            startTimeObservation = time.time()
+            
             g = Client("localhost:11211")
             g.set("t1_hw","1")
             g.set("t1_sw","1")
@@ -345,22 +360,30 @@ if __name__ == "__main__":
             
             X=[]
             acceptableStats = False
+            print("-"*85)
             while not acceptableStats:
+                time.sleep(20)
+                endTimeObservation = time.time()
                 # state=jvm_sys.getstate(mnt)
                 # print(state[0],i)
                 # X.append(state[0][0])
                 #
                 # if(isCpu):
                 #     jvm_sys.setU(10,"tier1")
-                
+                logs = ts_sys.getLogs()
+                ts_sys.systemLogHandler.addLogs(logs, startTimeObservation, endTimeObservation)
+                startTimeObservation = endTimeObservation
                 outCli=ts_sys.getRT(mnt,"Client")
-                acceptableStats = outCli.isAcceptable(minBatches=31, maxRelError=mre)
-                #if acceptableStats:
+                ts_sys.systemLogHandler.updateStats()
+                rtCI = ts_sys.systemLogHandler.getRT()
+                
+                acceptableStats = outCli.isAcceptable(minBatches=31, maxRelError=mre) and all(ci.isAcceptable(minBatches=31, maxRelError=mre) for ci in rtCI.values())
                 print(acceptableStats, nCli)
-                #print("t1", outT1.mean, outT1.CI, outT1.Nbatches, 'max(CI)-mean:', outT1.getRelError()*100,'%')
                 print("Client", outCli.mean, outCli.CI, outCli.Nbatches, 'max(CI)-mean:', outCli.getRelError()*100,'%')
+                for (ms_ep, ci) in rtCI.items():
+                    print(ms_ep, ci.mean, ci.CI, ci.Nbatches, 'max(CI)-mean:', ci.getRelError()*100,'%')
                 sys.stdout.flush()
-                time.sleep(1)
+                print("-"*85)
             
            
             mnt.close()
