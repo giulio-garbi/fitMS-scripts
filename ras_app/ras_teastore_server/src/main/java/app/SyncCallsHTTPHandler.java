@@ -29,8 +29,7 @@ public class SyncCallsHTTPHandler extends TierHttpHandler {
 		callsMap.computeIfAbsent(task, x->new HashMap<>()).put(entry, calls);
 	}
 	
-	public SyncCallsHTTPHandler(SimpleTask lqntask, HttpExchange req, long stime,
-			String[][] calls) {
+	public SyncCallsHTTPHandler(SimpleTask lqntask, HttpExchange req, long stime) {
 		super(lqntask, req, stime);
 		this.taskName = lqntask.getName();
 	}
@@ -75,7 +74,7 @@ public class SyncCallsHTTPHandler extends TierHttpHandler {
 			this.doWorkSleep(executing);
 		}
 		
-		this.getLqntask().getRts().addSample(new rtSample(Long.valueOf(this.getLqntask().getEnqueueTime().get(params.get("id"))),
+		this.getLqntask().getRts(entryName).addSample(new rtSample(Long.valueOf(this.getLqntask().getEnqueueTime().get(params.get("id"))),
 				System.nanoTime()));
 
 		req.getResponseHeaders().set("Content-Type", "text/html; charset=UTF-8");

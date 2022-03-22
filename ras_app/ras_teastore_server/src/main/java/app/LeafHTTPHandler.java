@@ -59,7 +59,7 @@ public class LeafHTTPHandler extends TierHttpHandler {
 			this.doWorkSleep(executing);
 		}
 		
-		this.getLqntask().getRts().addSample(new rtSample(Long.valueOf(this.getLqntask().getEnqueueTime().get(params.get("id"))),
+		this.getLqntask().getRts(entryName).addSample(new rtSample(Long.valueOf(this.getLqntask().getEnqueueTime().get(params.get("id"))),
 				System.nanoTime()));
 
 		req.getResponseHeaders().set("Content-Type", "text/html; charset=UTF-8");

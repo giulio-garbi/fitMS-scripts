@@ -159,9 +159,9 @@ public class Main {
 		longopts[1] = new LongOpt("jedisHost", LongOpt.REQUIRED_ARGUMENT, null, 1);
 		longopts[2] = new LongOpt("task", LongOpt.REQUIRED_ARGUMENT, null, 2);
 		longopts[3] = new LongOpt("port", LongOpt.REQUIRED_ARGUMENT, null, 3);
-		longopts[4] = new LongOpt("persistence", LongOpt.OPTIONAL_ARGUMENT, null, 4);
-		longopts[5] = new LongOpt("auth", LongOpt.OPTIONAL_ARGUMENT, null, 5);
-		longopts[6] = new LongOpt("image", LongOpt.OPTIONAL_ARGUMENT, null, 6);
+		longopts[4] = new LongOpt("persistence", LongOpt.REQUIRED_ARGUMENT, null, 4);
+		longopts[5] = new LongOpt("auth", LongOpt.REQUIRED_ARGUMENT, null, 5);
+		longopts[6] = new LongOpt("image", LongOpt.REQUIRED_ARGUMENT, null, 6);
 		
 
 		Getopt g = new Getopt("ddctrl", args, "", longopts);
@@ -204,34 +204,34 @@ public class Main {
 				}
 				break;
 			case 4:
-				try {
+				/*try {
 					if (!Main.validate(g.getOptarg())) {
 						throw new Exception(String.format("%s is not a valid persistence address", g.getOptarg()));
-					}
+					}*/
 					Main.ipportPers = String.valueOf(g.getOptarg());
-				} catch (Exception e) {
+				/*} catch (Exception e) {
 					e.printStackTrace();
-				}
+				}*/
 				break;
 			case 5:
-				try {
+				/*try {
 					if (!Main.validate(g.getOptarg())) {
 						throw new Exception(String.format("%s is not a valid auth address", g.getOptarg()));
-					}
+					}*/
 					Main.ipportAuth = String.valueOf(g.getOptarg());
-				} catch (Exception e) {
+				/*} catch (Exception e) {
 					e.printStackTrace();
-				}
+				}*/
 				break;
 			case 6:
-				try {
+				/*try {
 					if (!Main.validate(g.getOptarg())) {
 						throw new Exception(String.format("%s is not a valid image address", g.getOptarg()));
-					}
+					}*/
 					Main.ipportImage = String.valueOf(g.getOptarg());
-				} catch (Exception e) {
+				/*} catch (Exception e) {
 					e.printStackTrace();
-				}
+				}*/
 				break;
 			default:
 				break;

@@ -75,7 +75,7 @@ public class Client implements Runnable {
 //					Client.toKill.decrementAndGet();
 //					this.dying = true;
 //				}
-				this.task.getRts().addSample(new rtSample(start, System.nanoTime()));
+				this.task.getRts("browse").addSample(new rtSample(start, System.nanoTime()));
 			}
 			MCAtomicUpdater.AtomicIncr(this.memcachedClient, -1, "think", 100);
 			SimpleTask.getLogger().debug(String.format(" user %s stopped", this.clietId));
