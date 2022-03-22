@@ -332,7 +332,23 @@ class ts_sys(system_interface):
             N=int(N.decode('UTF-8'))
         
         return ConfInterval(RT, (CIlow, CIup), N)
+    
+    def getThr(self,monitor,taskname):
+        #qui si deve estendere per prendere tutti i response time
+        Thr=monitor.get("thr_"+taskname)
+        CIlow=monitor.get("lowCI_thr_"+taskname)
+        CIup=monitor.get("upCI_thr_"+taskname)
+        N=monitor.get("batches_thr_"+taskname)
+        if(Thr is not None):
+            Thr=float(Thr.decode('UTF-8'))
+        if(CIlow is not None):
+            CIlow=float(CIlow.decode('UTF-8'))
+        if(CIup is not None):
+            CIup=float(CIup.decode('UTF-8'))
+        if(N is not None):
+            N=int(N.decode('UTF-8'))
         
+        return ConfInterval(Thr, (CIlow, CIup), N)
        
             
 if __name__ == "__main__":
@@ -373,15 +389,22 @@ if __name__ == "__main__":
                 logs = ts_sys.getLogs()
                 ts_sys.systemLogHandler.addLogs(logs, startTimeObservation, endTimeObservation)
                 startTimeObservation = endTimeObservation
-                outCli=ts_sys.getRT(mnt,"Client")
+                rtOutCli=ts_sys.getRT(mnt,"Client")
+                thrOutCli=ts_sys.getThr(mnt,"Client")
                 ts_sys.systemLogHandler.updateStats()
                 rtCI = ts_sys.systemLogHandler.getRT()
+                thrCI = ts_sys.systemLogHandler.getThr()
                 
-                acceptableStats = outCli.isAcceptable(minBatches=31, maxRelError=mre) and all(ci.isAcceptable(minBatches=31, maxRelError=mre) for ci in rtCI.values())
+                acceptableStats = rtOutCli.isAcceptable(minBatches=31, maxRelError=mre) and \
+                    thrOutCli.isAcceptable(minBatches=31, maxRelError=mre) and \
+                    all(ci.isAcceptable(minBatches=31, maxRelError=mre) for ci in rtCI.values())
                 print(acceptableStats, nCli)
-                print("Client", outCli.mean, outCli.CI, outCli.Nbatches, 'max(CI)-mean:', outCli.getRelError()*100,'%')
+                print('rt',"Client", rtOutCli.mean, rtOutCli.CI, rtOutCli.Nbatches, 'max(CI)-mean:', rtOutCli.getRelError()*100,'%')
                 for (ms_ep, ci) in rtCI.items():
-                    print(ms_ep, ci.mean, ci.CI, ci.Nbatches, 'max(CI)-mean:', ci.getRelError()*100,'%')
+                    print('rt', ms_ep, ci.mean, ci.CI, ci.Nbatches, 'max(CI)-mean:', ci.getRelError()*100,'%')
+                print('thr',"Client", thrOutCli.mean, thrOutCli.CI, thrOutCli.Nbatches, 'max(CI)-mean:', thrOutCli.getRelError()*100,'%')
+                for (ms_ep, ci) in thrCI.items():
+                    print('thr', ms_ep, ci.mean, ci.CI, ci.Nbatches, 'max(CI)-mean:', ci.getRelError()*100,'%')
                 sys.stdout.flush()
                 print("-"*85)
             
