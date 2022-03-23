@@ -365,8 +365,8 @@ if __name__ == "__main__":
             
             g = Client("localhost:11211")
             for t in ts_sys.enames:
-                g.set(t+"_hw","50")
-                g.set(t+"_sw","50")
+                g.set(t+"_hw","100")
+                g.set(t+"_sw","100")
             #jvm_sys.setU(1.0,"tier1")
             #jvm_sys.setCpuset([2],"tier1")    
             mnt = Client("localhost:11211")
