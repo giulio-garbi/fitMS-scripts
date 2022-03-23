@@ -83,8 +83,6 @@ public class Client implements Runnable {
 //				}
 				long stop = System.nanoTime();
 				this.task.getRts("think").addSample(new rtSample(start, stop));
-				this.task.getRts("sleep").addSample(new rtSample(start, sleepOut));
-				this.task.getRts("postsleep").addSample(new rtSample(sleepOut, stop));
 			}
 			MCAtomicUpdater.AtomicIncr(this.memcachedClient, -1, "think", 100);
 			SimpleTask.getLogger().debug(String.format(" user %s stopped", this.clietId));
