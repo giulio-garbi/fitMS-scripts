@@ -17,6 +17,7 @@ import org.apache.commons.math3.distribution.ExponentialDistribution;
 
 import Server.MCAtomicUpdater;
 import Server.SimpleTask;
+import kong.unirest.Unirest;
 import monitoring.rtSample;
 import net.spy.memcached.MemcachedClient;
 
@@ -45,12 +46,13 @@ public class Client implements Runnable {
 
 	public void run() {
 		try {
-			HttpClient client = null;
+			/*HttpClient client = null;
 			HttpRequest request = null;
 			client = HttpClient.newBuilder().version(Version.HTTP_1_1).build();
 			//request = HttpRequest.newBuilder().uri(URI.create("http://" + Client.getWebuiHost() + "/tools.descartes.teastore.webui/")).build();
 			request = HttpRequest.newBuilder().uri(URI.create("http://localhost:3000/?id="+this.clietId
 					+ "&entry=index&snd=think")).build();
+			*/
 			
 			this.memcachedClient.set("started", 3600, String.valueOf(1)).get();
 			MCAtomicUpdater.AtomicIncr(this.memcachedClient, 1, "think", 100);
@@ -65,7 +67,9 @@ public class Client implements Runnable {
 				long sleepOut = System.nanoTime();
 
 //				SimpleTask.getLogger().debug(String.format("%s sending", this.task.getName()));
-				HttpResponse<String> resp = client.send(request, BodyHandlers.ofString());
+				//HttpResponse<String> resp = client.send(request, BodyHandlers.ofString());
+				Unirest.get(URI.create("http://localhost:3000/?id="+this.clietId
+						+ "&entry=index&snd=think").toString()).header("Connection", "close").asString();
 
 				// long thinking = this.memcachedClient.incr("think", 1);
 //				MCAtomicUpdater.AtomicIncr(this.memcachedClient, -1, "e1_ex", 100);

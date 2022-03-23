@@ -17,6 +17,7 @@ import com.sun.net.httpserver.HttpExchange;
 
 import Server.SimpleTask;
 import Server.TierHttpHandler;
+import kong.unirest.Unirest;
 import monitoring.rtSample;
 
 public class SyncCallsHTTPHandler extends TierHttpHandler {
@@ -43,9 +44,9 @@ public class SyncCallsHTTPHandler extends TierHttpHandler {
 		context.put("task", taskName);
 		context.put("entry", entryName);
 
-		HttpClient client = null;
-		HttpRequest request = null;
-		client = HttpClient.newBuilder().version(Version.HTTP_1_1).build();
+		//HttpClient client = null;
+		//HttpRequest request = null;
+		//client = HttpClient.newBuilder().version(Version.HTTP_1_1).build();
 
 		String renderedTemplate = jinjava.render(this.getWebPageTpl(), context);
 		
@@ -58,9 +59,11 @@ public class SyncCallsHTTPHandler extends TierHttpHandler {
 		/*request = HttpRequest.newBuilder().uri(URI.create("http://localhost:3002/?id="+params.get("id")
 		+ "&entry=categories&snd="+this.taskName+"-"+this.entryName)).build();
 		HttpResponse<String> resp = client.send(request, BodyHandlers.ofString());*/
-		request = HttpRequest.newBuilder().uri(URI.create("http://localhost:3001/?id="+params.get("id")
-			+ "&entry=categories&snd="+this.taskName+"-"+this.entryName)).build();
-		HttpResponse<String> resp = client.send(request, BodyHandlers.ofString());
+		/*request = HttpRequest.newBuilder().uri(URI.create("http://localhost:3001/?id="+params.get("id")
+			+ "&entry=categories&snd="+this.taskName+"-"+this.entryName)).build();*/
+		Unirest.get(URI.create("http://localhost:3001/?id="+params.get("id")
+			+ "&entry=categories&snd="+this.taskName+"-"+this.entryName).toString()).header("Connection", "close").asString();
+		//HttpResponse<String> resp = client.send(request, BodyHandlers.ofString());
 		
 		this.measureIngress();
 

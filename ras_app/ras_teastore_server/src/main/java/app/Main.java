@@ -12,6 +12,7 @@ import com.google.common.net.InternetDomainName;
 import Server.SimpleTask;
 import gnu.getopt.Getopt;
 import gnu.getopt.LongOpt;
+import kong.unirest.Unirest;
 import net.spy.memcached.MemcachedClient;
 
 public class Main {
@@ -31,6 +32,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		System.setProperty("net.spy.log.LoggerImpl", "net.spy.memcached.compat.log.SLF4JLogger");
+		Unirest.config().concurrency(2000,2000); 
 		Main.getCliOptions(args);
 		SimpleTask[] Sys = {};
 		switch(Main.task) {
