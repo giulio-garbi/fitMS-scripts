@@ -80,7 +80,6 @@ public class Client implements Runnable {
 //				}
 				long stop = System.nanoTime();
 				this.task.getRts("think").addSample(new rtSample(start, stop));
-				this.task.getRts("presleep").addSample(new rtSample(start, sleepIn));
 				this.task.getRts("sleep").addSample(new rtSample(sleepIn, sleepOut));
 				this.task.getRts("postsleep").addSample(new rtSample(sleepOut, stop));
 			}
