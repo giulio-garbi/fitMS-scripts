@@ -387,6 +387,8 @@ if __name__ == "__main__":
                 rtOutCli=ts_sys.getRT(mnt,"Client_think")
                 thrOutCli=ts_sys.getThr(mnt,"Client_think")
                 rtSlCli=ts_sys.getRT(mnt,"Client_sleep")
+                rtpreSlCli=ts_sys.getRT(mnt,"Client_presleep")
+                rtpostSlCli=ts_sys.getRT(mnt,"Client_postsleep")
                 rts = [(ts_sys.getRT(mnt,task+"_"+ent), task+"_"+ent) for (task,ent) in ts_sys.enames.items()]
                 thrs = [(ts_sys.getThr(mnt,task+"_"+ent), task+"_"+ent) for (task,ent) in ts_sys.enames.items()]
                 
@@ -397,6 +399,8 @@ if __name__ == "__main__":
                 print(acceptableStats, nCli)
                 print('rt',"Client_think", rtOutCli.mean, rtOutCli.CI, rtOutCli.Nbatches, 'max(CI)-mean:', rtOutCli.getRelError()*100,'%')
                 print('rt',"Client_sleep", rtSlCli.mean, rtSlCli.CI, rtSlCli.Nbatches, 'max(CI)-mean:', rtSlCli.getRelError()*100,'%')
+                print('rt',"Client_presleep", rtpreSlCli.mean, rtSlCli.CI, rtSlCli.Nbatches, 'max(CI)-mean:', rtSlCli.getRelError()*100,'%')
+                print('rt',"Client_postsleep", rtSlCli.mean, rtSlCli.CI, rtSlCli.Nbatches, 'max(CI)-mean:', rtSlCli.getRelError()*100,'%')
                 for ci in rts:
                     print('rt',ci[1], ci[0].mean, ci[0].CI, ci[0].Nbatches, 'max(CI)-mean:', ci[0].getRelError()*100,'%')
                 print('thr',"Client_think", thrOutCli.mean, thrOutCli.CI, thrOutCli.Nbatches, 'max(CI)-mean:', thrOutCli.getRelError()*100,'%')

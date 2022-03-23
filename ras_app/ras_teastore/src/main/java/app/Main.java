@@ -81,6 +81,12 @@ public class Main {
 		rtSampler rtsSl = new rtSampler(jedisHost, "Client_sleep");
 		se.scheduleAtFixedRate(rtsSl, 0, 100, TimeUnit.MILLISECONDS);
 		client.setRts("sleep",rtsSl);
+		rtSampler rtsprSl = new rtSampler(jedisHost, "Client_presleep");
+		se.scheduleAtFixedRate(rtsprSl, 0, 100, TimeUnit.MILLISECONDS);
+		client.setRts("presleep",rtsprSl);
+		rtSampler rtspstSl = new rtSampler(jedisHost, "Client_postsleep");
+		se.scheduleAtFixedRate(rtspstSl, 0, 100, TimeUnit.MILLISECONDS);
+		client.setRts("postsleep",rtspstSl);
 		return new SimpleTask[] { client };
 	}
 
