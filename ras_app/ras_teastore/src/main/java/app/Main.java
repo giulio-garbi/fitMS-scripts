@@ -77,7 +77,7 @@ public class Main {
 		ScheduledExecutorService se = Executors.newSingleThreadScheduledExecutor();
 		rtSampler rts = new rtSampler(jedisHost, "Client");
 		se.scheduleAtFixedRate(rts, 0, 100, TimeUnit.MILLISECONDS);
-		client.setRts("browse",rts);
+		client.setRts("Client",rts);
 		return new SimpleTask[] { client };
 	}
 
