@@ -51,7 +51,7 @@ public class SyncCallsHTTPHandler extends TierHttpHandler {
 		
 		String[][] calls = callsMap.get(taskName).get(entryName);
 		for(String[] call:calls) {
-			request = HttpRequest.newBuilder().uri(URI.create("http://" + call[0] + "/?id=0"
+			request = HttpRequest.newBuilder().uri(URI.create("http://" + call[0] + "/?id="+params.get("id")
 					+ "&entry="+call[1] + "&snd="+this.taskName+"-"+this.entryName)).build();
 			HttpResponse<String> resp = client.send(request, BodyHandlers.ofString());
 		}
