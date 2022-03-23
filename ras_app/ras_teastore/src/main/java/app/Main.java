@@ -74,7 +74,7 @@ public class Main {
 		clientEntries_stimes.put("think", 1000l);
 		final SimpleTask client = new SimpleTask(clientEntries, clientEntries_stimes, Main.initPop, "Client",
 				Main.jedisHost);
-		ScheduledExecutorService se = Executors.newScheduledThreadPool(4);
+		ScheduledExecutorService se = Executors.newSingleThreadScheduledExecutor();
 		rtSampler rts = new rtSampler(jedisHost, "Client_think");
 		se.scheduleAtFixedRate(rts, 0, 100, TimeUnit.MILLISECONDS);
 		client.setRts("think",rts);

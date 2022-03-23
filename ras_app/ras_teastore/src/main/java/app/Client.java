@@ -61,7 +61,6 @@ public class Client implements Runnable {
 //				String thinking = String.valueOf(this.memcachedClient.get("think"));
 
 //				SimpleTask.getLogger().debug(String.format("stop=%s", String.valueOf(memcachedClient.get("stop"))));
-				long sleepIn = System.nanoTime();
 				TimeUnit.MILLISECONDS.sleep(Double.valueOf(this.dist.sample()).longValue());
 				long sleepOut = System.nanoTime();
 
@@ -80,7 +79,7 @@ public class Client implements Runnable {
 //				}
 				long stop = System.nanoTime();
 				this.task.getRts("think").addSample(new rtSample(start, stop));
-				this.task.getRts("sleep").addSample(new rtSample(sleepIn, sleepOut));
+				this.task.getRts("sleep").addSample(new rtSample(start, sleepOut));
 				this.task.getRts("postsleep").addSample(new rtSample(sleepOut, stop));
 			}
 			MCAtomicUpdater.AtomicIncr(this.memcachedClient, -1, "think", 100);
