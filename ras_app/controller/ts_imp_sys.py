@@ -381,8 +381,8 @@ if __name__ == "__main__":
                 startTimeObservation = endTimeObservation
                 rtOutCli=ts_sys.getRT(mnt,"Client_browse")
                 thrOutCli=ts_sys.getThr(mnt,"Client_browse")
-                rts = [(ts_sys.getRT(mnt,task+"_"+ent), task+"_"+ent) for (task,ent) in self.enames.items()]
-                thrs = [(ts_sys.getThr(mnt,task+"_"+ent), task+"_"+ent) for (task,ent) in self.enames.items()]
+                rts = [(ts_sys.getRT(mnt,task+"_"+ent), task+"_"+ent) for (task,ent) in ts_sys.enames.items()]
+                thrs = [(ts_sys.getThr(mnt,task+"_"+ent), task+"_"+ent) for (task,ent) in ts_sys.enames.items()]
                 
                 acceptableStats = rtOutCli.isAcceptable(minBatches=31, maxRelError=mre) and \
                     thrOutCli.isAcceptable(minBatches=31, maxRelError=mre) and \
