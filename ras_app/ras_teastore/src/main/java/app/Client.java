@@ -49,7 +49,7 @@ public class Client implements Runnable {
 			HttpRequest request = null;
 			client = HttpClient.newBuilder().version(Version.HTTP_1_1).build();
 			//request = HttpRequest.newBuilder().uri(URI.create("http://" + Client.getWebuiHost() + "/tools.descartes.teastore.webui/")).build();
-			request = HttpRequest.newBuilder().uri(URI.create("http://localhost:3001/?id=0"
+			request = HttpRequest.newBuilder().uri(URI.create("http://localhost:3000/?id=0"
 					+ "&entry=index&snd=think")).build();
 			
 			this.memcachedClient.set("started", 3600, String.valueOf(1)).get();
