@@ -49,12 +49,18 @@ public class SyncCallsHTTPHandler extends TierHttpHandler {
 
 		String renderedTemplate = jinjava.render(this.getWebPageTpl(), context);
 		
-		String[][] calls = callsMap.get(taskName).get(entryName);
-		for(String[] call:calls) {
+		//String[][] calls = callsMap.get(taskName).get(entryName);
+		/*for(String[] call:calls) {
 			request = HttpRequest.newBuilder().uri(URI.create("http://" + call[0] + "/?id="+params.get("id")
 					+ "&entry="+call[1] + "&snd="+this.taskName+"-"+this.entryName)).build();
 			HttpResponse<String> resp = client.send(request, BodyHandlers.ofString());
-		}
+		}*/
+		/*request = HttpRequest.newBuilder().uri(URI.create("http://localhost:3002/?id="+params.get("id")
+		+ "&entry=categories&snd="+this.taskName+"-"+this.entryName)).build();
+		HttpResponse<String> resp = client.send(request, BodyHandlers.ofString());*/
+		request = HttpRequest.newBuilder().uri(URI.create("http://localhost:3001/?id="+params.get("id")
+			+ "&entry=categories&snd="+this.taskName+"-"+this.entryName)).build();
+		HttpResponse<String> resp = client.send(request, BodyHandlers.ofString());
 		
 		this.measureIngress();
 

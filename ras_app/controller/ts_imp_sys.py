@@ -28,7 +28,7 @@ class ts_sys(system_interface):
     javaCmd=None
     dck_client = None
     containers = None
-    enames = {'webui':'index', 'persistence':'categories', 'auth':'isloggedin', 'image':'getWebImages'}
+    enames = {'webui':'index', 'persistence':'categories'}#, 'auth':'isloggedin', 'image':'getWebImages'}
     
     systemLogHandler = None
     
@@ -51,12 +51,14 @@ class ts_sys(system_interface):
         r.set("started","0")
         r.close()
         
-        
+        qnames = "[\"think\", \"index_bl\", \"index_ex\", \"categories_bl\", \"categories_ex\", "+ \
+            "\"isloggedin_bl\", \"isloggedin_ex\", \"getWebImages_bl\", \"getWebImages_ex\", "+ \
+            "\"webui_hw\", \"persistence_hw\", \"auth_hw\", \"image_hw\"]"
         subprocess.Popen([self.javaCmd, "-Xmx4G",
                          "-Djava.compiler=NONE", "-jar",
                          '%sras_teastore/target/ras_teastore-0.0.1-SNAPSHOT-jar-with-dependencies.jar' % (self.sysRootPath),
                          '--initPop', '%d' % (pop), '--jedisHost','localhost', '--webuiHost','localhost:8080',
-                         '--queues','[\"think\", \"e1_bl\", \"e1_ex\", \"t1_hw\"]'])
+                         '--queues',qnames])
         
         self.waitClient()
         
@@ -92,7 +94,7 @@ class ts_sys(system_interface):
         self.waitMemCached()
         self.sys.append(self.findProcessIdByName("memcached")[0])
         
-        msargs = ["--task persistence --port 3001".split(), "--task auth --port 3002".split(), "--task image --port 3003".split(), \
+        msargs = ["--task persistence --port 3001".split(), #"--task auth --port 3002".split(), "--task image --port 3003".split(), \
                   "--task webui --port 3000 --persistence localhost:3001 --auth localhost:3002 --image localhost:3003".split()]
         
         for ma in msargs:
@@ -105,6 +107,7 @@ class ts_sys(system_interface):
                 self.waitTask(ma[1], ma[3], self.enames[ma[1]])
                 self.sys.append(self.findProcessIdByName("--task "+ma[1])[0])
             else:
+                print(ma)
                 # "cgexec", "-g", "cpu,cpuset:t1", 
                 subprocess.Popen([self.javaCmd, "-Xmx4G",
                                  "-Djava.compiler=NONE", "-jar","-Xint",
@@ -118,6 +121,7 @@ class ts_sys(system_interface):
                 self.sys.append(self.findProcessIdByName("--task "+ma[1])[0])
                 
     def waitTask(self, task, port, entryName):
+        print("waiting ",task, port, entryName)
         connected=False
         limit=1000
         atpt=0
@@ -360,8 +364,9 @@ if __name__ == "__main__":
             startTimeObservation = time.time()
             
             g = Client("localhost:11211")
-            g.set("t1_hw","1")
-            g.set("t1_sw","1")
+            for t in ts_sys.enames:
+                g.set(t+"_hw","50")
+                g.set(t+"_sw","50")
             #jvm_sys.setU(1.0,"tier1")
             #jvm_sys.setCpuset([2],"tier1")    
             mnt = Client("localhost:11211")
