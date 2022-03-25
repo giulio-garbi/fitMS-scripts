@@ -8,7 +8,7 @@ import os
 import psutil
 import requests as req
 import sys
-import docker
+#import docker
 import tarfile
 from io import BytesIO
 import re
