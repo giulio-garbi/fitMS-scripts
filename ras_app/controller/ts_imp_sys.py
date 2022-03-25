@@ -43,7 +43,7 @@ class ts_sys(system_interface):
         self.systemLogHandler = LogHandler(30)
         #if(isCpu):
         #    self.initCgroups()
-        self.dck_client = docker.from_env()
+        #self.dck_client = docker.from_env()
     
     def startClient(self, pop):
         r=Client("localhost:11211")
