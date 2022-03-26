@@ -86,7 +86,7 @@ class ts_sys(system_interface):
         print("Cnt %s is running"%(cnt.name))
         
         
-    def startSys(self, isCpu=1):
+    def startSys(self, NC, isCpu=1):
         cpuEmu = 0 if(isCpu) else 1
         
         self.sys = []
@@ -102,7 +102,7 @@ class ts_sys(system_interface):
                 subprocess.Popen([self.javaCmd, "-Xmx4G",
                                  "-Djava.compiler=NONE", "-jar",
                                  '%sras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar' % (self.sysRootPath),
-                                 '--cpuEmu', "%d" % (cpuEmu), '--jedisHost', 'localhost']+ma)
+                                 '--cpuEmu', "%d" % (cpuEmu), '--jedisHost', 'localhost', '--NC', str(NC)]+ma)
                 
                 self.waitTask(ma[1], ma[3], self.enames[ma[1]])
                 self.sys.append(self.findProcessIdByName("--task "+ma[1])[0])
@@ -112,7 +112,7 @@ class ts_sys(system_interface):
                 subprocess.Popen([self.javaCmd, "-Xmx4G",
                                  "-Djava.compiler=NONE", "-jar","-Xint",
                                  '%sras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar' % (self.sysRootPath),
-                                 '--cpuEmu', "%d" % (cpuEmu), '--jedisHost', 'localhost']+ma)
+                                 '--cpuEmu', "%d" % (cpuEmu), '--jedisHost', 'localhost', '--NC', str(NC)]+ma)
                 
                 # subprocess.Popen([self.javaCmd, "-Xmx4G","-jar",
                 #                  '%sras_tier1/target/ras_tier1-0.0.1-SNAPSHOT-jar-with-dependencies.jar' % (self.sysRootPath),
@@ -352,13 +352,14 @@ if __name__ == "__main__":
     try:
         nCli = int(sys.argv[1])
         mre = float(sys.argv[2])
+        NC = int(sys.argv[3])
         ts_sys = ts_sys("../")
         #    jvm_sys.setCpuset([2],"tier1") 
         
         for i in range(1):
             
             
-            ts_sys.startSys()
+            ts_sys.startSys(NC)
             ts_sys.startClient(nCli)
             
             startTimeObservation = time.time()
@@ -393,7 +394,7 @@ if __name__ == "__main__":
                     thrOutCli.isAcceptable(minBatches=31, maxRelError=mre) and \
                     all(ci[0].isAcceptable(minBatches=31, maxRelError=mre) for ci in rts) and \
                     all(ci[0].isAcceptable(minBatches=31, maxRelError=mre) for ci in thrs)
-                print(acceptableStats, nCli)
+                print(acceptableStats, nCli, NC)
                 print('rt',"Client_think", rtOutCli.mean, rtOutCli.CI, rtOutCli.Nbatches, 'max(CI)-mean:', rtOutCli.getRelError()*100,'%')
                 for ci in rts:
                     print('rt',ci[1], ci[0].mean, ci[0].CI, ci[0].Nbatches, 'max(CI)-mean:', ci[0].getRelError()*100,'%')

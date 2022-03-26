@@ -24,6 +24,7 @@ public class Main {
 	private static String ipportAuth;
 	private static String ipportImage;
 	private static String jedisHost = null;
+	public static int NC = -1; // -1 means infinite
 	
 	private static Duration persTime = Duration.ofMillis(60);
 	private static Duration authTime = Duration.ofMillis(40);
@@ -156,7 +157,7 @@ public class Main {
 	public static void getCliOptions(String[] args) {
 
 		int c;
-		LongOpt[] longopts = new LongOpt[7];
+		LongOpt[] longopts = new LongOpt[8];
 		longopts[0] = new LongOpt("cpuEmu", LongOpt.REQUIRED_ARGUMENT, null, 0);
 		longopts[1] = new LongOpt("jedisHost", LongOpt.REQUIRED_ARGUMENT, null, 1);
 		longopts[2] = new LongOpt("task", LongOpt.REQUIRED_ARGUMENT, null, 2);
@@ -164,6 +165,7 @@ public class Main {
 		longopts[4] = new LongOpt("persistence", LongOpt.REQUIRED_ARGUMENT, null, 4);
 		longopts[5] = new LongOpt("auth", LongOpt.REQUIRED_ARGUMENT, null, 5);
 		longopts[6] = new LongOpt("image", LongOpt.REQUIRED_ARGUMENT, null, 6);
+		longopts[7] = new LongOpt("NC", LongOpt.REQUIRED_ARGUMENT, null, 7);
 		
 
 		Getopt g = new Getopt("ddctrl", args, "", longopts);
@@ -234,6 +236,13 @@ public class Main {
 				/*} catch (Exception e) {
 					e.printStackTrace();
 				}*/
+				break;
+			case 7:
+				try {
+					Main.NC = Integer.valueOf(g.getOptarg());
+				} catch (NumberFormatException e) {
+					System.err.println(String.format("%s is not a valid number of cores.", g.getOptarg()));
+				}
 				break;
 			default:
 				break;

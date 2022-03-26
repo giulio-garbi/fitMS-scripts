@@ -23,6 +23,7 @@ public class LeafHTTPHandler extends TierHttpHandler {
 	public LeafHTTPHandler(SimpleTask lqntask, HttpExchange req, long stime) {
 		super(lqntask, req, stime);
 		this.taskName = lqntask.getName();
+		this.setNC(Main.NC);
 	}
 
 	public void handleResponse(HttpExchange req, String requestParamValue) throws InterruptedException, IOException {

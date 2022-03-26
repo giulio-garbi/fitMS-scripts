@@ -33,6 +33,7 @@ public class SyncCallsHTTPHandler extends TierHttpHandler {
 	public SyncCallsHTTPHandler(SimpleTask lqntask, HttpExchange req, long stime) {
 		super(lqntask, req, stime);
 		this.taskName = lqntask.getName();
+		this.setNC(Main.NC);
 	}
 
 	public void handleResponse(HttpExchange req, String requestParamValue) throws InterruptedException, IOException {
