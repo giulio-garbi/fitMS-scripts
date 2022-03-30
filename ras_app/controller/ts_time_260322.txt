@@ -1,0 +1,850 @@
+-------------------------------------------------------------------------------------
+False 5 5
+rt Client_think 1.1815901497153416 (1.1712469644307109, 1.1919333349999723) 1159 max(CI)-mean: 0.8753615022199136 %
+rt webui_index 0.17113545792429485 (0.16986540352015428, 0.17240551232843546) 1159 max(CI)-mean: 0.7421339911349267 %
+rt persistence_categories 0.06431145553597922 (0.06366699457395779, 0.06495591649800066) 1160 max(CI)-mean: 1.0020935720555861 %
+thr Client_think 4.228908339411616 (4.190082910291762, 4.267733768531469) 5485 max(CI)-mean: 0.9180957827346872 %
+thr webui_index 4.228460323247058 (4.190420699235056, 4.266499947259059) 5487 max(CI)-mean: 0.899609340138983 %
+thr persistence_categories 4.227811190085663 (4.189440921724191, 4.266181458447135) 5488 max(CI)-mean: 0.9075681632011273 %
+-------------------------------------------------------------------------------------
+False 5 5
+rt Client_think 1.181383547940309 (1.1710632156310645, 1.1917038802495536) 1162 max(CI)-mean: 0.8735801617719939 %
+rt webui_index 0.171069682324835 (0.16980071732541538, 0.17233864732425463) 1162 max(CI)-mean: 0.7417825193654551 %
+rt persistence_categories 0.06431114837995973 (0.0636677981635788, 0.06495449859634066) 1162 max(CI)-mean: 1.0003712149251638 %
+thr Client_think 4.228366988054085 (4.189608944402254, 4.267125031705916) 5498 max(CI)-mean: 0.9166196728271155 %
+thr webui_index 4.228283930411595 (4.19031010103633, 4.2662577597868605) 5500 max(CI)-mean: 0.8980908094213268 %
+thr persistence_categories 4.22703030303031 (4.188710296306573, 4.265350309754047) 5501 max(CI)-mean: 0.9065467710573457 %
+-------------------------------------------------------------------------------------
+True 5 5
+rt Client_think 1.1816136324603659 (1.171299170016704, 1.1919280949040276) 1165 max(CI)-mean: 0.8729132908008925 %
+rt webui_index 0.17107037960859117 (0.16980467640112543, 0.17233608281605692) 1165 max(CI)-mean: 0.7398727999327958 %
+rt persistence_categories 0.06429236520332181 (0.06364988990679833, 0.06493484049984528) 1165 max(CI)-mean: 0.9993026302449377 %
+thr Client_think 4.228270731264739 (4.189597429074969, 4.266944033454508) 5512 max(CI)-mean: 0.9146363761386118 %
+thr webui_index 4.227866473149496 (4.189955646112297, 4.265777300186695) 5513 max(CI)-mean: 0.89668931783831 %
+thr persistence_categories 4.2270995828042865 (4.188844168416995, 4.2653549971915785) 5514 max(CI)-mean: 0.9050038599259368 %
+Signal handled: Terminated.
+-------------------------------------------------------------------------------------
+terminate client forcibly
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC5--taskwebui--port3000--persistencelocalhost:3001--authlocalhost:3002--imagelocalhost:3003
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC5--taskpersistence--port3001
+killing memcached memcached-c2048-t20
+
+==> /home/giulio/out.30.8.txt <==
+-------------------------------------------------------------------------------------
+False 30 8
+rt Client_think 1.1780812067880941 (1.1674256039508488, 1.1887368096253392) 1188 max(CI)-mean: 0.9044879738211251 %
+rt webui_index 0.17452970274714993 (0.1730490074256408, 0.1760103980686591) 1188 max(CI)-mean: 0.8483915907737009 %
+rt persistence_categories 0.06521611668548159 (0.06455205194876262, 0.06588018142220056) 1188 max(CI)-mean: 1.0182524971880202 %
+thr Client_think 25.44182726623839 (25.21757490402683, 25.666079628449953) 935 max(CI)-mean: 0.8814318243137652 %
+thr webui_index 25.41319073083779 (25.17646130048389, 25.64992016119169) 936 max(CI)-mean: 0.9315218732712682 %
+thr persistence_categories 25.378917378917393 (25.13162587195166, 25.626208885883127) 937 max(CI)-mean: 0.9743973837558664 %
+-------------------------------------------------------------------------------------
+False 30 8
+rt Client_think 1.1780183306079188 (1.1674149730419385, 1.188621688173899) 1205 max(CI)-mean: 0.9001012370077629 %
+rt webui_index 0.17444160747840556 (0.1729722251179802, 0.17591098983883094) 1205 max(CI)-mean: 0.8423347971081228 %
+rt persistence_categories 0.06520878563159059 (0.0645507179569288, 0.06586685330625239) 1206 max(CI)-mean: 1.0091702648469414 %
+thr Client_think 25.448081661386823 (25.22518501278655, 25.670978309987095) 948 max(CI)-mean: 0.8758878235544202 %
+thr webui_index 25.419831223628695 (25.184489466955263, 25.655172980302126) 949 max(CI)-mean: 0.9258195091974978 %
+thr persistence_categories 25.388070175438607 (25.143193762696047, 25.632946588181166) 951 max(CI)-mean: 0.9645333853672053 %
+-------------------------------------------------------------------------------------
+True 30 8
+rt Client_think 1.1783981443373468 (1.167848517547372, 1.1889477711273215) 1222 max(CI)-mean: 0.895251476817892 %
+rt webui_index 0.17447310058738763 (0.17301636419170424, 0.175929836983071) 1222 max(CI)-mean: 0.834934663726992 %
+rt persistence_categories 0.06526125826775867 (0.06460890389191941, 0.06591361264359791) 1222 max(CI)-mean: 0.9996043489733453 %
+thr Client_think 25.438194444444434 (25.21732477866411, 25.659064110224758) 961 max(CI)-mean: 0.8682599948777437 %
+thr webui_index 25.409563409563408 (25.17709300576374, 25.642033813363074) 963 max(CI)-mean: 0.9148933417414475 %
+thr persistence_categories 25.375562478366223 (25.13312905594253, 25.617995900789918) 964 max(CI)-mean: 0.9553814723530936 %
+Signal handled: Terminated.
+-------------------------------------------------------------------------------------
+terminate client forcibly
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC8--taskwebui--port3000--persistencelocalhost:3001--authlocalhost:3002--imagelocalhost:3003
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC8--taskpersistence--port3001
+killing memcached memcached-c2048-t20
+
+==> /home/giulio/out.35.8.txt <==
+-------------------------------------------------------------------------------------
+False 35 8
+rt Client_think 1.1792676094707792 (1.1692422045655573, 1.1892930143760012) 1306 max(CI)-mean: 0.8501382404390023 %
+rt webui_index 0.17789967555399727 (0.1764066724189018, 0.17939267868909275) 1306 max(CI)-mean: 0.8392388184217441 %
+rt persistence_categories 0.06660431995307793 (0.06592800056669498, 0.06728063933946088) 1306 max(CI)-mean: 1.015428709217973 %
+thr Client_think 29.656818181818164 (29.4055406418335, 29.908095721802827) 881 max(CI)-mean: 0.8472842178960216 %
+thr webui_index 29.61375661375663 (29.358801152762467, 29.868712074750796) 883 max(CI)-mean: 0.8609358965141513 %
+thr persistence_categories 29.57795394488488 (29.315440711482964, 29.840467178286794) 884 max(CI)-mean: 0.8875300634083013 %
+-------------------------------------------------------------------------------------
+False 35 8
+rt Client_think 1.1801928336622103 (1.170223220134186, 1.1901624471902343) 1325 max(CI)-mean: 0.844744455623217 %
+rt webui_index 0.17786733165231608 (0.17639290159188392, 0.17934176171274827) 1325 max(CI)-mean: 0.8289493336046156 %
+rt persistence_categories 0.06665536766175734 (0.06598567004801047, 0.06732506527550422) 1325 max(CI)-mean: 1.0047167051050774 %
+thr Client_think 29.63758389261743 (29.388684621321158, 29.886483163913706) 895 max(CI)-mean: 0.8398095883864325 %
+thr webui_index 29.603724394785868 (29.352075845714175, 29.85537294385756) 896 max(CI)-mean: 0.8500570594286966 %
+thr persistence_categories 29.569196428571438 (29.30961067041554, 29.828782186727334) 897 max(CI)-mean: 0.8778925013500543 %
+-------------------------------------------------------------------------------------
+True 35 8
+rt Client_think 1.1805489012545298 (1.1706512659236679, 1.1904465365853916) 1344 max(CI)-mean: 0.8383926595792734 %
+rt webui_index 0.17778226223901697 (0.17632011608303133, 0.17924440839500264) 1344 max(CI)-mean: 0.8224364667043688 %
+rt persistence_categories 0.06658374177448503 (0.06592121176373142, 0.06724627178523863) 1344 max(CI)-mean: 0.9950327108343484 %
+thr Client_think 29.625137816979034 (29.377861335324077, 29.87241429863399) 908 max(CI)-mean: 0.8346846626760187 %
+thr webui_index 29.593245227606474 (29.343485108426844, 29.843005346786104) 909 max(CI)-mean: 0.843976783413526 %
+thr persistence_categories 29.55482214888157 (29.297820198808466, 29.811824098954673) 910 max(CI)-mean: 0.8695770483018426 %
+Signal handled: Terminated.
+-------------------------------------------------------------------------------------
+terminate client forcibly
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC8--taskwebui--port3000--persistencelocalhost:3001--authlocalhost:3002--imagelocalhost:3003
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC8--taskpersistence--port3001
+killing memcached memcached-c2048-t20
+
+==> /home/giulio/out.40.8.txt <==
+-------------------------------------------------------------------------------------
+False 40 8
+rt Client_think 1.1822137722979806 (1.1730568049921821, 1.1913707396037791) 1602 max(CI)-mean: 0.7745610413588103 %
+rt webui_index 0.18356504569804283 (0.1818486509990848, 0.18528144039700087) 1602 max(CI)-mean: 0.9350335149217031 %
+rt persistence_categories 0.0693541421204664 (0.06864959224656013, 0.07005869199437266) 1602 max(CI)-mean: 1.015872812156598 %
+thr Client_think 33.81907778951076 (33.57600582259502, 34.06214975642649) 948 max(CI)-mean: 0.7187421502993383 %
+thr webui_index 33.77918424753872 (33.52495816770322, 34.03341032737423) 949 max(CI)-mean: 0.7526116615857245 %
+thr persistence_categories 33.7354385964912 (33.47117213648654, 33.99970505649586) 951 max(CI)-mean: 0.7833497087900588 %
+-------------------------------------------------------------------------------------
+False 40 8
+rt Client_think 1.1821702883228795 (1.1730581939264393, 1.1912823827193197) 1624 max(CI)-mean: 0.7707937245967642 %
+rt webui_index 0.18358304509802836 (0.1818819851291441, 0.18528410506691262) 1624 max(CI)-mean: 0.9265888186874423 %
+rt persistence_categories 0.06939098218870404 (0.06869003433000308, 0.07009193004740501) 1624 max(CI)-mean: 1.0101425813440499 %
+thr Client_think 33.81527777777781 (33.574763777165685, 34.05579177838993) 961 max(CI)-mean: 0.7112583909341124 %
+thr webui_index 33.77477477477482 (33.52321071666807, 34.02633883288157) 963 max(CI)-mean: 0.7448282328580791 %
+thr persistence_categories 33.730702665282074 (33.46954100094407, 33.99186432962008) 964 max(CI)-mean: 0.7742550368119365 %
+-------------------------------------------------------------------------------------
+True 40 8
+rt Client_think 1.1828881083510843 (1.1738217045650021, 1.1919545121371662) 1646 max(CI)-mean: 0.7664633469618912 %
+rt webui_index 0.18361172703527864 (0.18192860421588494, 0.18529484985467234) 1646 max(CI)-mean: 0.9166750112155475 %
+rt persistence_categories 0.06939073043031595 (0.0686976957542909, 0.07008376510634098) 1647 max(CI)-mean: 0.9987424425817234 %
+thr Client_think 33.80082135523616 (33.56065301577186, 34.04098969470046) 975 max(CI)-mean: 0.710539950908892 %
+thr webui_index 33.762051282051324 (33.51110103038263, 34.013001533720015) 976 max(CI)-mean: 0.7432908906281464 %
+thr persistence_categories 33.717896174863355 (33.45733037875281, 33.9784619709739) 977 max(CI)-mean: 0.7727818923198396 %
+Signal handled: Terminated.
+-------------------------------------------------------------------------------------
+terminate client forcibly
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC8--taskwebui--port3000--persistencelocalhost:3001--authlocalhost:3002--imagelocalhost:3003
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC8--taskpersistence--port3001
+killing memcached memcached-c2048-t20
+
+==> /home/giulio/out.45.8.txt <==
+-------------------------------------------------------------------------------------
+False 45 8
+rt Client_think 1.2044715439295908 (1.1966968290524083, 1.2122462588067733) 2167 max(CI)-mean: 0.6454876345037996 %
+rt webui_index 0.19556745478715556 (0.19376821697287785, 0.19736669260143327) 2168 max(CI)-mean: 0.9200088103799773 %
+rt persistence_categories 0.07399062850672196 (0.0732417464794199, 0.07473951053402401) 2168 max(CI)-mean: 1.0121309176796907 %
+thr Client_think 37.335055986218755 (37.09800691063631, 37.5721050618012) 1162 max(CI)-mean: 0.6349235840705532 %
+thr webui_index 37.301204819277146 (37.06287532598398, 37.53953431257031) 1163 max(CI)-mean: 0.6389324271102279 %
+thr persistence_categories 37.26282602464893 (37.018501800455375, 37.507150248842485) 1164 max(CI)-mean: 0.6556781926092706 %
+-------------------------------------------------------------------------------------
+False 45 8
+rt Client_think 1.20462941500981 (1.196905109108111, 1.2123537209115087) 2192 max(CI)-mean: 0.6412184365957724 %
+rt webui_index 0.19558486775726436 (0.1937926924768419, 0.1973770430376868) 2192 max(CI)-mean: 0.9163159200264244 %
+rt persistence_categories 0.07402423263453511 (0.07327843058874661, 0.07477003468032363) 2192 max(CI)-mean: 1.0075106748767169 %
+thr Client_think 37.332765474162386 (37.09746173664974, 37.56806921167503) 1175 max(CI)-mean: 0.6302874553332943 %
+thr webui_index 37.301560283687984 (37.064198700042, 37.53892186733397) 1176 max(CI)-mean: 0.6363315149307127 %
+thr persistence_categories 37.263038548752874 (37.01955866108326, 37.50651843642249) 1177 max(CI)-mean: 0.6534085709383561 %
+-------------------------------------------------------------------------------------
+True 45 8
+rt Client_think 1.204941532541318 (1.1972723690814082, 1.2126106960012277) 2217 max(CI)-mean: 0.6364759826756803 %
+rt webui_index 0.19552156431883247 (0.19374305460777178, 0.19730007402989314) 2217 max(CI)-mean: 0.9096233028089382 %
+rt persistence_categories 0.07397150017829414 (0.07323182610877885, 0.07471117424780943) 2217 max(CI)-mean: 0.9999446648134069 %
+thr Client_think 37.325470373490575 (37.09182278314913, 37.55911796383202) 1188 max(CI)-mean: 0.6259735992701384 %
+thr webui_index 37.29405162738499 (37.05839744342553, 37.52970581134445) 1189 max(CI)-mean: 0.6318814225763033 %
+thr persistence_categories 37.256582633053256 (37.01520796064766, 37.497957305458854) 1191 max(CI)-mean: 0.6478712091845368 %
+Signal handled: Terminated.
+-------------------------------------------------------------------------------------
+terminate client forcibly
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC8--taskwebui--port3000--persistencelocalhost:3001--authlocalhost:3002--imagelocalhost:3003
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC8--taskpersistence--port3001
+killing memcached memcached-c2048-t20
+
+==> /home/giulio/out.50.8.txt <==
+-------------------------------------------------------------------------------------
+False 50 8
+rt Client_think 1.2211641734486622 (1.214893609252328, 1.2274347376449966) 3577 max(CI)-mean: 0.5134906782128857 %
+rt webui_index 0.21800214724673736 (0.21593297858213317, 0.22007131591134155) 3577 max(CI)-mean: 0.9491505889904278 %
+rt persistence_categories 0.08287105290013984 (0.08203589946257334, 0.08370620633770634) 3577 max(CI)-mean: 1.0077746189285992 %
+thr Client_think 40.91762013729984 (40.728742912842165, 41.10649736175752) 1749 max(CI)-mean: 0.4616036412281458 %
+thr webui_index 40.89270059081379 (40.702336054784, 41.08306512684358) 1750 max(CI)-mean: 0.4655220449601559 %
+thr persistence_categories 40.865904761904766 (40.68016423308394, 41.05164529072559) 1751 max(CI)-mean: 0.4545122147741366 %
+-------------------------------------------------------------------------------------
+False 50 8
+rt Client_think 1.2209655233575423 (1.2147157224222405, 1.227215324292844) 3605 max(CI)-mean: 0.51187366192908 %
+rt webui_index 0.21806081362021817 (0.21600007696000764, 0.22012155028042873) 3605 max(CI)-mean: 0.9450284193654376 %
+rt persistence_categories 0.08291731139552354 (0.08208529351737028, 0.0837493292736768) 3605 max(CI)-mean: 1.0034308447176459 %
+thr Client_think 40.92220329358326 (40.73444543886118, 41.10996114830534) 1762 max(CI)-mean: 0.4588165827120075 %
+thr webui_index 40.89519485433219 (40.705783287646504, 41.084606421017874) 1763 max(CI)-mean: 0.4631633798551755 %
+thr persistence_categories 40.873015873015866 (40.68824694454592, 41.057784801485816) 1765 max(CI)-mean: 0.4520560191691978 %
+-------------------------------------------------------------------------------------
+True 50 8
+rt Client_think 1.2209812052446016 (1.2147626327518533, 1.2271997777373502) 3632 max(CI)-mean: 0.5093094362171462 %
+rt webui_index 0.2180999936525933 (0.21605084380996617, 0.22014914349522044) 3632 max(CI)-mean: 0.9395460349674198 %
+rt persistence_categories 0.08289941960324985 (0.08207157064230144, 0.08372726856419825) 3632 max(CI)-mean: 0.9986185246053794 %
+thr Client_think 40.92244131455406 (40.735015902246005, 41.10986672686211) 1776 max(CI)-mean: 0.45800154215480315 %
+thr webui_index 40.897147147147145 (40.7083450900114, 41.08594920428289) 1777 max(CI)-mean: 0.4616509226338934 %
+thr persistence_categories 40.87188144813355 (40.687788040011604, 41.055974856255496) 1778 max(CI)-mean: 0.450415791001842 %
+Signal handled: Terminated.
+-------------------------------------------------------------------------------------
+terminate client forcibly
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC8--taskwebui--port3000--persistencelocalhost:3001--authlocalhost:3002--imagelocalhost:3003
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC8--taskpersistence--port3001
+killing memcached memcached-c2048-t20
+
+==> /home/giulio/out.55.8.txt <==
+-------------------------------------------------------------------------------------
+False 55 8
+rt Client_think 1.256002027506377 (1.2501940706449302, 1.2618099843678239) 4234 max(CI)-mean: 0.4624162011089885 %
+rt webui_index 0.25213997124382215 (0.24974688252075627, 0.254533059966888) 4234 max(CI)-mean: 0.9491112064702067 %
+rt persistence_categories 0.0961762265700131 (0.09521076154880778, 0.0971416915912184) 4234 max(CI)-mean: 1.0038499696205836 %
+thr Client_think 43.75434969853577 (43.57308390462323, 43.935615492448306) 1936 max(CI)-mean: 0.414280626181043 %
+thr webui_index 43.73002754820942 (43.548296875435376, 43.911758220983465) 1937 max(CI)-mean: 0.41557410997214345 %
+thr persistence_categories 43.7057305110997 (43.536480912762094, 43.87498010943731) 1938 max(CI)-mean: 0.38724807103870346 %
+-------------------------------------------------------------------------------------
+False 55 8
+rt Client_think 1.2561974849980824 (1.2503937535371827, 1.262001216458982) 4263 max(CI)-mean: 0.4620078873114835 %
+rt webui_index 0.25219202339640995 (0.2498080793098298, 0.25457596748299005) 4263 max(CI)-mean: 0.9452892500223461 %
+rt persistence_categories 0.09622188542895324 (0.09525911428735644, 0.09718465657055006) 4263 max(CI)-mean: 1.000573972651673 %
+thr Client_think 43.7515400410678 (43.57055725760111, 43.93252282453449) 1949 max(CI)-mean: 0.41366037240473785 %
+thr webui_index 43.72772361894994 (43.54639439667957, 43.90905284122031) 1950 max(CI)-mean: 0.41467793716064755 %
+thr persistence_categories 43.702905982906046 (43.53449148565195, 43.87132048016014) 1951 max(CI)-mean: 0.3853622395727446 %
+-------------------------------------------------------------------------------------
+True 55 8
+rt Client_think 1.2563069434808771 (1.250522785750158, 1.2620911012115963) 4291 max(CI)-mean: 0.46040959661441266 %
+rt webui_index 0.25233988210424996 (0.24996244613901059, 0.25471731806948933) 4291 max(CI)-mean: 0.9421562479200868 %
+rt persistence_categories 0.09626779686737345 (0.09530813264730181, 0.0972274610874451) 4291 max(CI)-mean: 0.9968694114749026 %
+thr Client_think 43.746047934727194 (43.56560295701438, 43.92649291244001) 1962 max(CI)-mean: 0.4124829241307836 %
+thr webui_index 43.72321276957043 (43.542329704882334, 43.90409583425853) 1964 max(CI)-mean: 0.41370030523919676 %
+thr persistence_categories 43.697556008146705 (43.529796334042715, 43.865315682250696) 1965 max(CI)-mean: 0.3839108852511443 %
+Signal handled: Terminated.
+-------------------------------------------------------------------------------------
+terminate client forcibly
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC8--taskwebui--port3000--persistencelocalhost:3001--authlocalhost:3002--imagelocalhost:3003
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC8--taskpersistence--port3001
+killing memcached memcached-c2048-t20
+==> /home/giulio/out.60.8.txt <==
+-------------------------------------------------------------------------------------
+False 60 8
+rt Client_think 1.3072482030108914 (1.3016582925026972, 1.3128381135190856) 4989 max(CI)-mean: 0.42760896479485677 %
+rt webui_index 0.30146414532062904 (0.29863314666619345, 0.3042951439750647) 4989 max(CI)-mean: 0.9390830380258564 %
+rt persistence_categories 0.11535335359995343 (0.11419667508374631, 0.11651003211616054) 4989 max(CI)-mean: 1.0027263881884922 %
+thr Client_think 45.86390804597705 (45.686374265382256, 46.04144182657184) 2176 max(CI)-mean: 0.3870882097897567 %
+thr webui_index 45.84436274509805 (45.66733031206909, 46.021395178127015) 2177 max(CI)-mean: 0.38615965503390465 %
+thr persistence_categories 45.821773082223174 (45.66262198986975, 45.9809241745766) 2178 max(CI)-mean: 0.34732635087656494 %
+-------------------------------------------------------------------------------------
+False 60 8
+rt Client_think 1.3075100690235935 (1.3019391568747132, 1.3130809811724737) 5019 max(CI)-mean: 0.42607030575607413 %
+rt webui_index 0.30193659409247997 (0.29910765368055664, 0.30476553450440325) 5019 max(CI)-mean: 0.9369319477243626 %
+rt persistence_categories 0.11550803579920974 (0.11435142470894934, 0.11666464688947012) 5019 max(CI)-mean: 1.0013252171225107 %
+thr Client_think 45.85679463741625 (45.67980347878373, 46.03378579604877) 2189 max(CI)-mean: 0.38596495902507827 %
+thr webui_index 45.83615044921579 (45.65985780933076, 46.01244308910083) 2190 max(CI)-mean: 0.38461484692166187 %
+thr persistence_categories 45.81530503575224 (45.65665170132099, 45.97395837018349) 2192 max(CI)-mean: 0.34628894057879545 %
+-------------------------------------------------------------------------------------
+True 60 8
+rt Client_think 1.3075810315285041 (1.3020203306841722, 1.313141732372836) 5049 max(CI)-mean: 0.42526625197611645 %
+rt webui_index 0.3016555786782683 (0.2988362985950861, 0.30447485876145053) 5049 max(CI)-mean: 0.9346023353969297 %
+rt persistence_categories 0.11543556434727306 (0.1142821410533156, 0.11658898764123052) 5049 max(CI)-mean: 0.9991923203905604 %
+thr Client_think 45.85255828035124 (45.67644454826363, 46.02867201243885) 2203 max(CI)-mean: 0.38408703612743833 %
+thr webui_index 45.83053412013921 (45.6550312453793, 46.00603699489913) 2204 max(CI)-mean: 0.38293875061515653 %
+thr persistence_categories 45.808227465214685 (45.65006178699189, 45.96639314343748) 2205 max(CI)-mean: 0.34527788341712157 %
+Signal handled: Terminated.
+-------------------------------------------------------------------------------------
+terminate client forcibly
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC8--taskwebui--port3000--persistencelocalhost:3001--authlocalhost:3002--imagelocalhost:3003
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC8--taskpersistence--port3001
+killing memcached memcached-c2048-t20
+
+==> /home/giulio/out.65.8.txt <==
+-------------------------------------------------------------------------------------
+False 65 8
+rt Client_think 1.3767520706479972 (1.3708189076020327, 1.3826852336939617) 4849 max(CI)-mean: 0.4309536315548744 %
+rt webui_index 0.374307316042491 (0.37082500512880284, 0.3777896269561792) 4849 max(CI)-mean: 0.930334718141833 %
+rt persistence_categories 0.14365588599313125 (0.14221369332978537, 0.14509807865647711) 4849 max(CI)-mean: 1.0039217351768073 %
+thr Client_think 47.18248175182477 (46.99194813253685, 47.373015371112686) 2056 max(CI)-mean: 0.4038228007803981 %
+thr webui_index 47.15985732814536 (46.96406183957925, 47.35565281671146) 2057 max(CI)-mean: 0.4151740477154774 %
+thr persistence_categories 47.13531032247608 (46.96654689347224, 47.30407375147992) 2058 max(CI)-mean: 0.35804034777589117 %
+-------------------------------------------------------------------------------------
+False 65 8
+rt Client_think 1.3767976813162714 (1.3708836071319122, 1.3827117555006307) 4880 max(CI)-mean: 0.4295528867179102 %
+rt webui_index 0.3746677140456713 (0.37118860395002296, 0.3781468241413196) 4880 max(CI)-mean: 0.9285855079640604 %
+rt persistence_categories 0.14381295942303077 (0.1423718308457139, 0.14525408800034764) 4880 max(CI)-mean: 1.0020853357712678 %
+thr Client_think 47.179239200515745 (46.98883470800514, 47.36964369302635) 2069 max(CI)-mean: 0.4035768607911775 %
+thr webui_index 47.155469631061806 (46.959727350568656, 47.351211911554955) 2070 max(CI)-mean: 0.4150998431881 %
+thr persistence_categories 47.131176565266365 (46.962885397990945, 47.299467732541785) 2072 max(CI)-mean: 0.35706973502427575 %
+-------------------------------------------------------------------------------------
+True 65 8
+rt Client_think 1.376994216655049 (1.371096274120577, 1.3828921591895211) 4911 max(CI)-mean: 0.4283200657733453 %
+rt webui_index 0.3747443562464215 (0.37127792742441623, 0.3782107850684268) 4911 max(CI)-mean: 0.9250116150450818 %
+rt persistence_categories 0.1438037740005024 (0.14236909060846972, 0.1452384573925351) 4911 max(CI)-mean: 0.9976674131151048 %
+thr Client_think 47.17323086775532 (46.98348256257713, 47.362979172933514) 2083 max(CI)-mean: 0.40223724703132846 %
+thr webui_index 47.14962393983047 (46.954365832852744, 47.344882046808195) 2084 max(CI)-mean: 0.4141244206462855 %
+thr persistence_categories 47.124120281509896 (46.956384670292834, 47.29185589272696) 2085 max(CI)-mean: 0.3559442812195602 %
+Signal handled: Terminated.
+-------------------------------------------------------------------------------------
+terminate client forcibly
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC8--taskwebui--port3000--persistencelocalhost:3001--authlocalhost:3002--imagelocalhost:3003
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC8--taskpersistence--port3001
+killing memcached memcached-c2048-t20
+
+==> /home/giulio/out.70.8.txt <==
+-------------------------------------------------------------------------------------
+False 70 8
+rt Client_think 1.4670617659881184 (1.4604889927218467, 1.47363453925439) 4360 max(CI)-mean: 0.44802294072768534 %
+rt webui_index 0.4608971055470436 (0.4566812808639911, 0.4651129302300961) 4360 max(CI)-mean: 0.9146997523555016 %
+rt persistence_categories 0.17626256467225698 (0.17449597995985885, 0.17802914938465508) 4360 max(CI)-mean: 1.002246118274117 %
+thr Client_think 47.68599562363246 (47.47536071697811, 47.89663053028681) 1829 max(CI)-mean: 0.4417122970794411 %
+thr webui_index 47.657007472207 (47.43799834396828, 47.876016600445716) 1830 max(CI)-mean: 0.4595528335815897 %
+thr persistence_categories 47.62534134352817 (47.435290968076934, 47.815391718979406) 1832 max(CI)-mean: 0.39905304631913513 %
+-------------------------------------------------------------------------------------
+False 70 8
+rt Client_think 1.466649446852799 (1.4600956831770089, 1.4732032105285895) 4392 max(CI)-mean: 0.4468527697503837 %
+rt webui_index 0.4601638765290899 (0.45596201045525375, 0.46436574260292607) 4393 max(CI)-mean: 0.9131238430817007 %
+rt persistence_categories 0.17599187859511264 (0.17423173457698715, 0.17775202261323816) 4393 max(CI)-mean: 1.0001279787318549 %
+thr Client_think 47.700525076951 (47.490661028726485, 47.91038912517552) 1842 max(CI)-mean: 0.4399617150669985 %
+thr webui_index 47.66920014477016 (47.450790164368996, 47.88761012517132) 1843 max(CI)-mean: 0.4581784039544543 %
+thr persistence_categories 47.636659436008735 (47.44694977026654, 47.82636910175093) 1845 max(CI)-mean: 0.39824300861615486 %
+-------------------------------------------------------------------------------------
+True 70 8
+rt Client_think 1.466816837454324 (1.4602902909028963, 1.4733433840057517) 4424 max(CI)-mean: 0.4449462526455991 %
+rt webui_index 0.459968575422269 (0.4557882636724844, 0.46414888717205355) 4424 max(CI)-mean: 0.9088255096441906 %
+rt persistence_categories 0.17589684369046676 (0.17414524977341894, 0.1776484376075146) 4424 max(CI)-mean: 0.995807474595836 %
+thr Client_think 47.6966756513927 (47.48798388560663, 47.90536741717877) 1856 max(CI)-mean: 0.4375394363149444 %
+thr webui_index 47.66774425287354 (47.45039590281757, 47.88509260292951) 1857 max(CI)-mean: 0.45596525168666624 %
+thr persistence_categories 47.63669000179507 (47.447963401771204, 47.82541660181893) 1858 max(CI)-mean: 0.39617907964795807 %
+Signal handled: Terminated.
+-------------------------------------------------------------------------------------
+terminate client forcibly
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC8--taskwebui--port3000--persistencelocalhost:3001--authlocalhost:3002--imagelocalhost:3003
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC8--taskpersistence--port3001
+killing memcached memcached-c2048-t20
+
+==> /home/giulio/out.75.8.txt <==
+-------------------------------------------------------------------------------------
+False 75 8
+rt Client_think 1.5580182219028693 (1.5505856601353367, 1.565450783670402) 3564 max(CI)-mean: 0.47705230035467205 %
+rt webui_index 0.5566190938021032 (0.5516365659740067, 0.5616016216301997) 3564 max(CI)-mean: 0.8951413782919835 %
+rt persistence_categories 0.21322843057622765 (0.21108645164272916, 0.2153704095097261) 3564 max(CI)-mean: 1.0045465924548553 %
+thr Client_think 48.11838847625482 (47.87376266631494, 48.363014286194705) 1482 max(CI)-mean: 0.508383214164788 %
+thr webui_index 48.07782276203322 (47.82857641924547, 48.32706910482097) 1483 max(CI)-mean: 0.5184226915212516 %
+thr persistence_categories 48.044504383007435 (47.82638804551699, 48.26262072049788) 1484 max(CI)-mean: 0.45398811017309015 %
+-------------------------------------------------------------------------------------
+False 75 8
+rt Client_think 1.5588200341381266 (1.5513977263757557, 1.5662423419004974) 3594 max(CI)-mean: 0.47614911277904776 %
+rt webui_index 0.557009947169114 (0.5520457845756553, 0.5619741097625727) 3594 max(CI)-mean: 0.8912161476986145 %
+rt persistence_categories 0.21336044819711528 (0.2112226288641255, 0.21549826753010506) 3595 max(CI)-mean: 1.0019754603321516 %
+thr Client_think 48.09861668897817 (47.85431075496777, 48.34292262298857) 1495 max(CI)-mean: 0.5079271522301003 %
+thr webui_index 48.06109253065768 (47.81252128745067, 48.30966377386469) 1496 max(CI)-mean: 0.5171984865896445 %
+thr persistence_categories 48.02761077710979 (47.810336556064506, 48.24488499815508) 1498 max(CI)-mean: 0.45239439882535387 %
+-------------------------------------------------------------------------------------
+True 75 8
+rt Client_think 1.5590273865737718 (1.5516290088065192, 1.5664257643410242) 3626 max(CI)-mean: 0.4745508533696498 %
+rt webui_index 0.5575215127845314 (0.5525761629541595, 0.5624668626149034) 3626 max(CI)-mean: 0.8870240370945541 %
+rt persistence_categories 0.2135022576500411 (0.2113718601864505, 0.21563265511363172) 3626 max(CI)-mean: 0.9978336936757944 %
+thr Client_think 48.09068790090692 (47.84757767108484, 48.333798130729) 1508 max(CI)-mean: 0.5055245421380105 %
+thr webui_index 48.051248067152564 (47.80390977941279, 48.298586354892336) 1510 max(CI)-mean: 0.5147385295676657 %
+thr persistence_categories 48.02251655629141 (47.806638499741844, 48.23839461284097) 1511 max(CI)-mean: 0.4495350765229341 %
+Signal handled: Terminated.
+-------------------------------------------------------------------------------------
+terminate client forcibly
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC8--taskwebui--port3000--persistencelocalhost:3001--authlocalhost:3002--imagelocalhost:3003
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC8--taskpersistence--port3001
+killing memcached memcached-c2048-t20
+
+==> /home/giulio/out.80.8.txt <==
+-------------------------------------------------------------------------------------
+False 80 8
+rt Client_think 1.666511775399241 (1.6581628156131836, 1.6748607351852984) 3170 max(CI)-mean: 0.5009841460050535 %
+rt webui_index 0.6575342565832126 (0.6518006935038839, 0.6632678196625412) 3170 max(CI)-mean: 0.8719793717094342 %
+rt persistence_categories 0.25112114210300823 (0.2485863805366131, 0.2536559036694034) 3170 max(CI)-mean: 1.0093780018551393 %
+thr Client_think 47.98536462276049 (47.70879890485255, 48.261930340668435) 1322 max(CI)-mean: 0.576354311532649 %
+thr webui_index 47.940494200706006 (47.65969550457466, 48.221292896837355) 1323 max(CI)-mean: 0.585723407346964 %
+thr persistence_categories 47.91181657848321 (47.67178130883205, 48.15185184813437) 1324 max(CI)-mean: 0.5009938816616625 %
+-------------------------------------------------------------------------------------
+False 80 8
+rt Client_think 1.6665158393469734 (1.6582198013841976, 1.6748118773097493) 3202 max(CI)-mean: 0.4978073275335149 %
+rt webui_index 0.6570861691448612 (0.6513826723607936, 0.6627896659289289) 3202 max(CI)-mean: 0.8679983009671722 %
+rt persistence_categories 0.250979185831272 (0.24845493290447915, 0.25350343875806486) 3203 max(CI)-mean: 1.0057618596666702 %
+thr Client_think 47.99150424787601 (47.715938284341036, 48.26707021141098) 1335 max(CI)-mean: 0.5741973873368824 %
+thr webui_index 47.94506866416979 (47.666456667151394, 48.22368066118818) 1336 max(CI)-mean: 0.5811066805846634 %
+thr persistence_categories 47.91473448017946 (47.6764164258237, 48.15305253453522) 1338 max(CI)-mean: 0.4973794740620797 %
+-------------------------------------------------------------------------------------
+True 80 8
+rt Client_think 1.6663264129345177 (1.6580720872018249, 1.6745807386672102) 3234 max(CI)-mean: 0.4953606729521939 %
+rt webui_index 0.6569516487914221 (0.6512790177632706, 0.6626242798195736) 3234 max(CI)-mean: 0.8634777062493597 %
+rt persistence_categories 0.25090648380688496 (0.24839823764014485, 0.253414729973625) 3235 max(CI)-mean: 0.9996737145583604 %
+thr Client_think 47.99554565701554 (47.72075452047077, 48.27033679356031) 1348 max(CI)-mean: 0.5725346650051143 %
+thr webui_index 47.951074870274276 (47.67324287724849, 48.22890686330006) 1350 max(CI)-mean: 0.5794072265896548 %
+thr persistence_categories 47.916049382716 (47.67836086675899, 48.153737898673) 1351 max(CI)-mean: 0.4960519888827507 %
+Signal handled: Terminated.
+-------------------------------------------------------------------------------------
+terminate client forcibly
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC8--taskwebui--port3000--persistencelocalhost:3001--authlocalhost:3002--imagelocalhost:3003
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC8--taskpersistence--port3001
+killing memcached memcached-c2048-t20
+
+==> /home/giulio/out.85.8.txt <==
+-------------------------------------------------------------------------------------
+False 85 8
+rt Client_think 1.7652288237687943 (1.7559411204215762, 1.7745165271160124) 2570 max(CI)-mean: 0.5261472746286036 %
+rt webui_index 0.7652230474386412 (0.7588262130483352, 0.7716198818289471) 2570 max(CI)-mean: 0.8359437698220716 %
+rt persistence_categories 0.2922758545471262 (0.2893167649953425, 0.2952349440989099) 2570 max(CI)-mean: 1.012430382375832 %
+thr Client_think 48.13995626366759 (47.84810422627629, 48.431808301058894) 1068 max(CI)-mean: 0.6062573796137182 %
+thr webui_index 48.08551810237204 (47.77656511838216, 48.394471086361925) 1069 max(CI)-mean: 0.6425073414663749 %
+thr persistence_categories 48.04610591900305 (47.771726938103676, 48.32048489990242) 1071 max(CI)-mean: 0.5710743371417527 %
+-------------------------------------------------------------------------------------
+False 85 8
+rt Client_think 1.765686500270474 (1.756453243865612, 1.7749197566753359) 2601 max(CI)-mean: 0.5229272808874877 %
+rt webui_index 0.765356114866937 (0.7589777009746289, 0.7717345287592452) 2601 max(CI)-mean: 0.8333916419309115 %
+rt persistence_categories 0.2922969677132771 (0.2893553582554944, 0.2952385771710598) 2602 max(CI)-mean: 1.0063770010327886 %
+thr Client_think 48.1364197530864 (47.844702217304764, 48.42813728886804) 1081 max(CI)-mean: 0.6060225028740985 %
+thr webui_index 48.08071472581641 (47.77292032650309, 48.38850912512972) 1083 max(CI)-mean: 0.6401618633760644 %
+thr persistence_categories 48.04062788550316 (47.76832467973271, 48.31293109127362) 1084 max(CI)-mean: 0.5668185820123856 %
+-------------------------------------------------------------------------------------
+True 85 8
+rt Client_think 1.7654062817727705 (1.7562353449180035, 1.7745772186275373) 2633 max(CI)-mean: 0.5194802436953823 %
+rt webui_index 0.7651047227392844 (0.7587779292304445, 0.7714315162481242) 2634 max(CI)-mean: 0.8269186322871133 %
+rt persistence_categories 0.29227400187065466 (0.28935630371116594, 0.29519170003014333) 2634 max(CI)-mean: 0.9982749546023224 %
+thr Client_think 48.1401584399756 (47.85071309172512, 48.42960378822608) 1095 max(CI)-mean: 0.6012554956822203 %
+thr webui_index 48.090106544901076 (47.784438134283555, 48.3957749555186) 1096 max(CI)-mean: 0.6356159979228216 %
+thr persistence_categories 48.04866180048654 (47.77786057228251, 48.31946302869057) 1097 max(CI)-mean: 0.5635978569569372 %
+Signal handled: Terminated.
+
+==> /home/giulio/out.90.8.txt <==
+-------------------------------------------------------------------------------------
+False 90 8
+rt Client_think 1.8735054056767282 (1.8638271600546983, 1.8831836512987583) 2499 max(CI)-mean: 0.5165848784158832 %
+rt webui_index 0.866727230709832 (0.8596589936603163, 0.8737954677593479) 2500 max(CI)-mean: 0.8155088243537849 %
+rt persistence_categories 0.32986917877414945 (0.3265457565088696, 0.3331926010394294) 2500 max(CI)-mean: 1.0074970561452081 %
+thr Client_think 48.02049311559392 (47.70446365499512, 48.33652257619272) 1042 max(CI)-mean: 0.6581137345634062 %
+thr webui_index 47.97184900831734 (47.64109777706343, 48.302600239571255) 1043 max(CI)-mean: 0.6894694244463406 %
+thr persistence_categories 47.931607542345766 (47.65786997729388, 48.205345107397655) 1044 max(CI)-mean: 0.5711003220788113 %
+-------------------------------------------------------------------------------------
+False 90 8
+rt Client_think 1.8735759439893407 (1.8639461294449946, 1.8832057585336868) 2531 max(CI)-mean: 0.5139804754239986 %
+rt webui_index 0.8660522611920172 (0.8590264768887523, 0.873078045495282) 2531 max(CI)-mean: 0.811242533284849 %
+rt persistence_categories 0.3295707713573552 (0.32627157848367244, 0.33286996423103793) 2532 max(CI)-mean: 1.0010574845866453 %
+thr Client_think 48.020872865275074 (47.70633899564773, 48.33540673490242) 1055 max(CI)-mean: 0.6549940699949108 %
+thr webui_index 47.97409162717219 (47.64549384304562, 48.302689411298765) 1056 max(CI)-mean: 0.6849484231619227 %
+thr persistence_categories 47.92803030303027 (47.65636545867664, 48.1996951473839) 1057 max(CI)-mean: 0.5668182953399066 %
+-------------------------------------------------------------------------------------
+True 90 8
+rt Client_think 1.8728802821967234 (1.863381778203035, 1.8825235827379447) 2564 max(CI)-mean: 0.5148914553102439 %
+rt webui_index 0.8654117506060466 (0.8584284726024208, 0.8723950286096723) 2565 max(CI)-mean: 0.8069312669645828 %
+rt persistence_categories 0.3293670161574491 (0.3260864427808613, 0.33264758953403695) 2565 max(CI)-mean: 0.996023650109395 %
+thr Client_think 48.03311465167129 (47.720097722025805, 48.346131581316776) 1068 max(CI)-mean: 0.6516690244125027 %
+thr webui_index 47.99126092384519 (47.66414764948799, 48.31837419820239) 1069 max(CI)-mean: 0.6816100849616795 %
+thr persistence_categories 47.94953271028034 (47.68004451358593, 48.21902090697474) 1071 max(CI)-mean: 0.5620246568881073 %
+Signal handled: Terminated.
+-------------------------------------------------------------------------------------
+terminate client forcibly
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC8--taskwebui--port3000--persistencelocalhost:3001--authlocalhost:3002--imagelocalhost:3003
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC8--taskpersistence--port3001
+killing memcached memcached-c2048-t20
+==> /home/giulio/out.8.2.txt <==
+-------------------------------------------------------------------------------------
+False 8 2
+rt Client_think 1.2168008822927618 (1.2088853934058226, 1.2247163711797011) 1995 max(CI)-mean: 0.6505163664924765 %
+rt webui_index 0.21076396811325632 (0.20892889667291356, 0.21259903955359907) 1995 max(CI)-mean: 0.8706760727510408 %
+rt persistence_categories 0.08131540604314606 (0.08050072220858903, 0.08213008987770308) 1995 max(CI)-mean: 1.0018812844945335 %
+thr Client_think 6.5712403228463225 (6.527852203819904, 6.614628441872741) 6072 max(CI)-mean: 0.6602728997076881 %
+thr webui_index 6.570064218672816 (6.526840222871209, 6.613288214474424) 6074 max(CI)-mean: 0.6578930488801079 %
+thr persistence_categories 6.5689825485676625 (6.526104975267482, 6.611860121867843) 6075 max(CI)-mean: 0.6527277699882117 %
+-------------------------------------------------------------------------------------
+False 8 2
+rt Client_think 1.2166848667925594 (1.208776609350235, 1.2245931242348838) 1999 max(CI)-mean: 0.6499840392666529 %
+rt webui_index 0.2107768208275107 (0.2089442837875794, 0.21260935786744203) 1999 max(CI)-mean: 0.8694205713592144 %
+rt persistence_categories 0.08129405933143138 (0.08048044590527915, 0.08210767275758361) 1999 max(CI)-mean: 1.0008276531439675 %
+thr Client_think 6.5717885510819 (6.52845440533213, 6.61512269683167) 6086 max(CI)-mean: 0.6593965312933908 %
+thr webui_index 6.571146894511997 (6.52797540012306, 6.614318388900934) 6087 max(CI)-mean: 0.6569856842645287 %
+thr persistence_categories 6.57017687968895 (6.5273500326551215, 6.613003726722779) 6088 max(CI)-mean: 0.6518370481961241 %
+-------------------------------------------------------------------------------------
+True 8 2
+rt Client_think 1.2165790359161925 (1.2086896207282185, 1.2244684511041666) 2004 max(CI)-mean: 0.6484917917422934 %
+rt webui_index 0.21081560216435333 (0.20898673531070278, 0.2126444690180039) 2004 max(CI)-mean: 0.86751968776238 %
+rt persistence_categories 0.08128012223721082 (0.08046760374833453, 0.08209264072608709) 2004 max(CI)-mean: 0.999652149273334 %
+thr Client_think 6.572428118508804 (6.529136797772685, 6.6157194392449234) 6099 max(CI)-mean: 0.6586807790899298 %
+thr webui_index 6.571787724763623 (6.528674492173297, 6.614900957353949) 6100 max(CI)-mean: 0.6560350759332589 %
+thr persistence_categories 6.570616838769596 (6.527852397727786, 6.613381279811406) 6102 max(CI)-mean: 0.650843628401534 %
+Signal handled: Terminated.
+-------------------------------------------------------------------------------------
+terminate client forcibly
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC2--taskwebui--port3000--persistencelocalhost:3001--authlocalhost:3002--imagelocalhost:3003
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC2--taskpersistence--port3001
+killing memcached memcached-c2048-t20
+
+==> /home/giulio/out.9.2.txt <==
+-------------------------------------------------------------------------------------
+False 9 2
+rt Client_think 1.2252664174208259 (1.2180913470605974, 1.2324414877810546) 2351 max(CI)-mean: 0.5855926725986778 %
+rt webui_index 0.22487281132330522 (0.22291802028151605, 0.2268276023650944) 2351 max(CI)-mean: 0.8692874119756145 %
+rt persistence_categories 0.08716273703204247 (0.08628875832158354, 0.08803671574250141) 2351 max(CI)-mean: 1.0026976437622077 %
+thr Client_think 7.340827478532377 (7.297882501927033, 7.383772455137722) 6406 max(CI)-mean: 0.5850154731320601 %
+thr webui_index 7.340410032261421 (7.297129893123169, 7.383690171399674) 6407 max(CI)-mean: 0.5896147347087444 %
+thr persistence_categories 7.339264346287905 (7.297143351678204, 7.381385340897606) 6408 max(CI)-mean: 0.5739130330004419 %
+-------------------------------------------------------------------------------------
+False 9 2
+rt Client_think 1.225185244938135 (1.2180186820756425, 1.232351807800628) 2356 max(CI)-mean: 0.5849370854000705 %
+rt webui_index 0.22482639557556997 (0.22287519522957455, 0.22677759592156535) 2356 max(CI)-mean: 0.8678697805923489 %
+rt persistence_categories 0.0871622272672469 (0.08628991954832271, 0.0880345349861711) 2356 max(CI)-mean: 1.0007864028642017 %
+thr Client_think 7.342576725346606 (7.299653625352213, 7.385499825340999) 6420 max(CI)-mean: 0.5845781610455977 %
+thr webui_index 7.34215991692627 (7.298904854476282, 7.385414979376257) 6421 max(CI)-mean: 0.5891326658558538 %
+thr persistence_categories 7.340912630431389 (7.298824551019036, 7.383000709843742) 6422 max(CI)-mean: 0.5733357898564106 %
+-------------------------------------------------------------------------------------
+True 9 2
+rt Client_think 1.2253307371823623 (1.2181676596636892, 1.2324938147010356) 2361 max(CI)-mean: 0.5845831905877694 %
+rt webui_index 0.22488571430923754 (0.22293530384891186, 0.22683612476956322) 2361 max(CI)-mean: 0.8672896214490953 %
+rt persistence_categories 0.08718690662224567 (0.08631514533844786, 0.08805866790604347) 2361 max(CI)-mean: 0.9998763777396986 %
+thr Client_think 7.3413142620231975 (7.298440212201929, 7.384188311844466) 6433 max(CI)-mean: 0.5840105503050977 %
+thr webui_index 7.3405875952121855 (7.297385860802062, 7.383789329622309) 6434 max(CI)-mean: 0.5885323735977415 %
+thr persistence_categories 7.339446689462225 (7.297381682987707, 7.381511695936743) 6435 max(CI)-mean: 0.573135935913447 %
+Signal handled: Terminated.
+-------------------------------------------------------------------------------------
+terminate client forcibly
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC2--taskwebui--port3000--persistencelocalhost:3001--authlocalhost:3002--imagelocalhost:3003
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC2--taskpersistence--port3001
+killing memcached memcached-c2048-t20
+
+-------------------------------------------------------------------------------------
+False 10 2
+rt Client_think 1.2464960459304961 (1.2395622796904264, 1.253429812170566) 2621 max(CI)-mean: 0.5562605884476699 %
+rt webui_index 0.24210605995215584 (0.2398872703226594, 0.24432484958165226) 2622 max(CI)-mean: 0.9164535699498375 %
+rt persistence_categories 0.09372968547345827 (0.09279070504045704, 0.09466866590645948) 2622 max(CI)-mean: 1.0017962060345378 %
+thr Client_think 8.018660140715829 (7.97414083926165, 8.063179442170007) 6539 max(CI)-mean: 0.5551962631278697 %
+thr webui_index 8.01804281345561 (7.973354293912969, 8.06273133299825) 6541 max(CI)-mean: 0.5573494752066673 %
+thr persistence_categories 8.016715079243777 (7.9734176565054735, 8.060012501982081) 6542 max(CI)-mean: 0.5400893297356417 %
+-------------------------------------------------------------------------------------
+False 10 2
+rt Client_think 1.2464761372667048 (1.2395519973319051, 1.2534002772015045) 2627 max(CI)-mean: 0.5554971914651375 %
+rt webui_index 0.2421591178210715 (0.23994267772516378, 0.24437555791697924) 2627 max(CI)-mean: 0.9152825282199126 %
+rt persistence_categories 0.09374100502768497 (0.09280350041391333, 0.09467850964145662) 2627 max(CI)-mean: 1.0001008774066085 %
+thr Client_think 8.018213268213279 (7.9737478303796125, 8.062678706046945) 6553 max(CI)-mean: 0.5545554395508766 %
+thr webui_index 8.01770181596211 (7.973088966866049, 8.06231466505817) 6554 max(CI)-mean: 0.5564293873743488 %
+thr persistence_categories 8.01637676736856 (7.973120564915703, 8.059632969821418) 6555 max(CI)-mean: 0.539597921955666 %
+-------------------------------------------------------------------------------------
+True 10 2
+rt Client_think 1.246499374515761 (1.239578840113801, 1.2534199089177214) 2632 max(CI)-mean: 0.5551975832036626 %
+rt webui_index 0.24218667396940344 (0.2399711653949894, 0.2444021825438175) 2632 max(CI)-mean: 0.9147937572708663 %
+rt persistence_categories 0.09375862013705843 (0.09282167734260205, 0.09469556293151483) 2632 max(CI)-mean: 0.9993137623898004 %
+thr Client_think 8.018177202335629 (7.973722200111337, 8.062632204559922) 6566 max(CI)-mean: 0.5544277845511261 %
+thr webui_index 8.017664077965541 (7.9730752341268625, 8.06225292180422) 6568 max(CI)-mean: 0.5561326017788513 %
+thr persistence_categories 8.016443361753993 (7.973226687103247, 8.05966003640474) 6569 max(CI)-mean: 0.5391003553637181 %
+Signal handled: Terminated.
+-------------------------------------------------------------------------------------
+terminate client forcibly
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC2--taskwebui--port3000--persistencelocalhost:3001--authlocalhost:3002--imagelocalhost:3003
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC2--taskpersistence--port3001
+killing memcached memcached-c2048-t20
+
+-------------------------------------------------------------------------------------
+False 23 2
+rt Client_think 1.9191013034876534 (1.9101734867613518, 1.9280291202139552) 3629 max(CI)-mean: 0.46520820501121957 %
+rt webui_index 0.9076022515994676 (0.8996616141139411, 0.9155428890849941) 3629 max(CI)-mean: 0.8749027970713767 %
+rt persistence_categories 0.40203650743316777 (0.39800846336523465, 0.4060645515011008) 3629 max(CI)-mean: 1.001910023955388 %
+thr Client_think 11.980301529657696 (11.918377339516237, 12.042225719799156) 6059 max(CI)-mean: 0.5168834022095656 %
+thr webui_index 11.978547854785482 (11.918303360132796, 12.038792349438168) 6061 max(CI)-mean: 0.5029365444210998 %
+thr persistence_categories 11.977231479953788 (11.92731495933187, 12.027148000575707) 6062 max(CI)-mean: 0.4167617592217657 %
+-------------------------------------------------------------------------------------
+False 23 2
+rt Client_think 1.9191045323909532 (1.9101901630554639, 1.9280189017264429) 3637 max(CI)-mean: 0.4645067105533577 %
+rt webui_index 0.9079012956652645 (0.8999686641716269, 0.915833927158902) 3637 max(CI)-mean: 0.8737328090081542 %
+rt persistence_categories 0.4021850643200768 (0.3981598180540171, 0.4062103105861364) 3637 max(CI)-mean: 1.000844293625019 %
+thr Client_think 11.980566534914308 (11.918706417451814, 12.042426652376802) 6073 max(CI)-mean: 0.5163371638746687 %
+thr webui_index 11.97859377572864 (11.91839511787331, 12.038792433583971) 6074 max(CI)-mean: 0.50255196045889 %
+thr persistence_categories 11.976841180989998 (11.926955477226455, 12.026726884753542) 6075 max(CI)-mean: 0.41651803684867483 %
+-------------------------------------------------------------------------------------
+True 23 2
+rt Client_think 1.9195060748568047 (1.9106008459078787, 1.9284113038057307) 3644 max(CI)-mean: 0.4639333558551156 %
+rt webui_index 0.9083126477164842 (0.9003906266079174, 0.9162346688250511) 3645 max(CI)-mean: 0.8721689749100153 %
+rt persistence_categories 0.4023569058494326 (0.39833677928148076, 0.40637703241738454) 3645 max(CI)-mean: 0.9991444186759667 %
+thr Client_think 11.978307313064864 (11.916491365760496, 12.040123260369231) 6086 max(CI)-mean: 0.516065798687134 %
+thr webui_index 11.976996385146242 (11.916843482019537, 12.037149288272946) 6087 max(CI)-mean: 0.5022369648646264 %
+thr persistence_categories 11.97481384143669 (11.924996772877241, 12.024630909996139) 6089 max(CI)-mean: 0.4160153904611509 %
+Signal handled: Terminated.
+-------------------------------------------------------------------------------------
+terminate client forcibly
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC2--taskwebui--port3000--persistencelocalhost:3001--authlocalhost:3002--imagelocalhost:3003
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC2--taskpersistence--port3001
+killing memcached memcached-c2048-t20
+
+-------------------------------------------------------------------------------------
+False 16 2
+rt Client_think 1.4403513745456387 (1.4348336059270064, 1.4458691431642707) 5000 max(CI)-mean: 0.3830848997087713 %
+rt webui_index 0.4413748513654003 (0.4373276260437419, 0.4454220766870586) 5000 max(CI)-mean: 0.9169587503996074 %
+rt persistence_categories 0.17944300953119352 (0.17764433452212383, 0.1812416845402632) 5000 max(CI)-mean: 1.002365605530605 %
+thr Client_think 11.102623885126413 (11.059514052617285, 11.14573371763554) 9008 max(CI)-mean: 0.38828508427525515 %
+thr webui_index 11.10097310097313 (11.058181726687065, 11.143764475259195) 9010 max(CI)-mean: 0.38547408318927867 %
+thr persistence_categories 11.099815020347707 (11.062695382700294, 11.13693465799512) 9011 max(CI)-mean: 0.334416722975713 %
+-------------------------------------------------------------------------------------
+False 16 2
+rt Client_think 1.440272563669066 (1.4347580988159707, 1.4457870285221617) 5008 max(CI)-mean: 0.3828764771473255 %
+rt webui_index 0.4413869490834503 (0.43734493105968153, 0.44542896710721896) 5008 max(CI)-mean: 0.915753860000172 %
+rt persistence_categories 0.17946533164519068 (0.17766867264554476, 0.1812619906448366) 5008 max(CI)-mean: 1.0011175881021894 %
+thr Client_think 11.103055832686723 (11.059954111392324, 11.146157553981121) 9022 max(CI)-mean: 0.3881969247376892 %
+thr webui_index 11.102194635335875 (11.059430591862187, 11.144958678809564) 9023 max(CI)-mean: 0.3851854960061681 %
+thr persistence_categories 11.10066866156853 (11.06355910580255, 11.13777821733451) 9024 max(CI)-mean: 0.3343001840461777 %
+-------------------------------------------------------------------------------------
+True 16 2
+rt Client_think 1.4401723102911628 (1.4346632565386161, 1.4456813640437092) 5016 max(CI)-mean: 0.3825274040599088 %
+rt webui_index 0.44140009978863454 (0.43736118638832455, 0.4454390131889445) 5016 max(CI)-mean: 0.9150232186725893 %
+rt persistence_categories 0.17947285469587967 (0.1776782508805769, 0.18126745851118242) 5016 max(CI)-mean: 0.9999305011020969 %
+thr Client_think 11.103829975647582 (11.06073982751913, 11.146920123776033) 9035 max(CI)-mean: 0.3880656334161681 %
+thr webui_index 11.102774088829893 (11.060053599423817, 11.145494578235969) 9037 max(CI)-mean: 0.38477311223557475 %
+thr persistence_categories 11.101250414960665 (11.064168797061546, 11.138332032859784) 9038 max(CI)-mean: 0.3340310011307002 %
+Signal handled: Terminated.
+-------------------------------------------------------------------------------------
+terminate client forcibly
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC2--taskwebui--port3000--persistencelocalhost:3001--authlocalhost:3002--imagelocalhost:3003
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC2--taskpersistence--port3001
+killing memcached memcached-c2048-t20
+
+-------------------------------------------------------------------------------------
+False 11 2
+rt Client_think 1.261016504728684 (1.2546531169053428, 1.2673798925520257) 2949 max(CI)-mean: 0.5046236745894681 %
+rt webui_index 0.26382155316273176 (0.26139616677730465, 0.26624693954815887) 2949 max(CI)-mean: 0.9193283703894615 %
+rt persistence_categories 0.10272556350607202 (0.10169567087768258, 0.10375545613446148) 2949 max(CI)-mean: 1.0025670273676133 %
+thr Client_think 8.718305001231867 (8.674266658484433, 8.762343343979301) 6766 max(CI)-mean: 0.5051250528768148 %
+thr webui_index 8.717600118220783 (8.674021860315536, 8.761178376126031) 6768 max(CI)-mean: 0.4998882411933985 %
+thr persistence_categories 8.716016548463331 (8.673376282619282, 8.75865681430738) 6769 max(CI)-mean: 0.4892173575733642 %
+-------------------------------------------------------------------------------------
+False 11 2
+rt Client_think 1.2611634855821352 (1.2548092844503083, 1.2675176867139621) 2955 max(CI)-mean: 0.5038364339333796 %
+rt webui_index 0.26379216411345063 (0.2613691953044436, 0.2662151329224577) 2955 max(CI)-mean: 0.9185143224970826 %
+rt persistence_categories 0.10271230252445283 (0.10168369789915725, 0.10374090714974842) 2955 max(CI)-mean: 1.0014424757450069 %
+thr Client_think 8.716919899690254 (8.672917978549677, 8.76092182083083) 6780 max(CI)-mean: 0.5047874896973694 %
+thr webui_index 8.716715830875131 (8.673190709988896, 8.760240951761366) 6781 max(CI)-mean: 0.4993293544349176 %
+thr persistence_categories 8.714931681903051 (8.672339532870105, 8.757523830935998) 6783 max(CI)-mean: 0.48872613793853775 %
+-------------------------------------------------------------------------------------
+True 11 2
+rt Client_think 1.26118591892023 (1.2548404567800233, 1.2675313810604365) 2960 max(CI)-mean: 0.5031345533606408 %
+rt webui_index 0.2638277794495833 (0.2614092428918134, 0.26624631600735327) 2961 max(CI)-mean: 0.9167103490071042 %
+rt persistence_categories 0.10272775787597982 (0.10170109172907636, 0.10375442402288329) 2961 max(CI)-mean: 0.9994048036587488 %
+thr Client_think 8.716921868865365 (8.672983569764702, 8.760860167966028) 6793 max(CI)-mean: 0.5040575074740503 %
+thr webui_index 8.716325629324313 (8.67285591784069, 8.759795340807935) 6794 max(CI)-mean: 0.49871601099180113 %
+thr persistence_categories 8.714741231297497 (8.67221874940952, 8.757263713185473) 6796 max(CI)-mean: 0.48793740123073753 %
+Signal handled: Terminated.
+-------------------------------------------------------------------------------------
+terminate client forcibly
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC2--taskwebui--port3000--persistencelocalhost:3001--authlocalhost:3002--imagelocalhost:3003
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC2--taskpersistence--port3001
+killing memcached memcached-c2048-t20
+
+-------------------------------------------------------------------------------------
+False 21 2
+rt Client_think 1.7697955422606078 (1.7622637292445038, 1.7773273552767117) 4274 max(CI)-mean: 0.42557531851862174 %
+rt webui_index 0.7657641630331459 (0.7589510997616773, 0.7725772263046146) 4274 max(CI)-mean: 0.8897077717090539 %
+rt persistence_categories 0.3314119542797729 (0.32808926755049833, 0.33473464100904743) 4274 max(CI)-mean: 1.002585056563647 %
+thr Client_think 11.861319270977944 (11.808074505132142, 11.914564036823746) 7207 max(CI)-mean: 0.448894129138573 %
+thr webui_index 11.860043476249915 (11.806429327142741, 11.91365762535709) 7208 max(CI)-mean: 0.4520569356641746 %
+thr persistence_categories 11.858695149581548 (11.814135707430685, 11.903254591732411) 7210 max(CI)-mean: 0.3757533319543626 %
+-------------------------------------------------------------------------------------
+False 21 2
+rt Client_think 1.769746686337509 (1.7622191767223105, 1.7772741959527079) 4282 max(CI)-mean: 0.4253439022268746 %
+rt webui_index 0.7656342031242854 (0.7588293551143755, 0.7724390511341953) 4282 max(CI)-mean: 0.8887857911965891 %
+rt persistence_categories 0.33136464102197377 (0.32804642205085355, 0.33468285999309405) 4282 max(CI)-mean: 1.0013799181730554 %
+thr Client_think 11.861107263240578 (11.807898777213317, 11.914315749267839) 7220 max(CI)-mean: 0.44859628065384927 %
+thr webui_index 11.859853205927127 (11.80625020300508, 11.913456208849174) 7222 max(CI)-mean: 0.4519702056283335 %
+thr persistence_categories 11.85858026400813 (11.814055832807668, 11.903104695208594) 7223 max(CI)-mean: 0.3754617349565748 %
+-------------------------------------------------------------------------------------
+True 21 2
+rt Client_think 1.7697118570940802 (1.7621895181761527, 1.7772341960120077) 4290 max(CI)-mean: 0.42506009595705796 %
+rt webui_index 0.7657780245328202 (0.7589811937035634, 0.772574855362077) 4290 max(CI)-mean: 0.8875719348832736 %
+rt persistence_categories 0.3314324870949723 (0.328119104242976, 0.3347458699469686) 4290 max(CI)-mean: 0.9997157735013554 %
+thr Client_think 11.861744780865536 (11.808599278054944, 11.914890283676128) 7234 max(CI)-mean: 0.44804119286331573 %
+thr webui_index 11.860289374251192 (11.806731683149685, 11.913847065352698) 7235 max(CI)-mean: 0.45157153768761 %
+thr persistence_categories 11.858926514627974 (11.81445494434842, 11.90339808490753) 7236 max(CI)-mean: 0.3750050244826056 %
+Signal handled: Terminated.
+-------------------------------------------------------------------------------------
+terminate client forcibly
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC2--taskwebui--port3000--persistencelocalhost:3001--authlocalhost:3002--imagelocalhost:3003
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC2--taskpersistence--port3001
+killing memcached memcached-c2048-t20
+
+==> /home/giulio/out.13.2.txt <==
+-------------------------------------------------------------------------------------
+False 13 2
+rt Client_think 1.3187271584451281 (1.3130919782456538, 1.3243623386446026) 3885 max(CI)-mean: 0.4273196440512215 %
+rt webui_index 0.3173114439095595 (0.314356179537406, 0.32026670828171294) 3885 max(CI)-mean: 0.9313450330507919 %
+rt persistence_categories 0.12565729754583785 (0.12439962169885059, 0.1269149733928251) 3885 max(CI)-mean: 1.0008776820371001 %
+thr Client_think 9.852838003465596 (9.810283174746784, 9.895392832184408) 7888 max(CI)-mean: 0.4319042767560344 %
+thr webui_index 9.851842461122413 (9.80917295961156, 9.894511962633265) 7889 max(CI)-mean: 0.43311189434094105 %
+thr persistence_categories 9.8504246419065 (9.810943357067197, 9.889905926745802) 7890 max(CI)-mean: 0.40080794762225896 %
+-------------------------------------------------------------------------------------
+False 13 2
+rt Client_think 1.3188524890338418 (1.3132184145690466, 1.324486563498637) 3891 max(CI)-mean: 0.42719519518991217 %
+rt webui_index 0.3172228216121583 (0.31426948630212254, 0.3201761569221941) 3891 max(CI)-mean: 0.9309971127003501 %
+rt persistence_categories 0.12562367363599783 (0.12436690179852149, 0.12688044547347416) 3892 max(CI)-mean: 1.0004259556346842 %
+thr Client_think 9.851814345991537 (9.809289318943433, 9.89433937303964) 7901 max(CI)-mean: 0.4316466546632203 %
+thr webui_index 9.850736193730786 (9.808111387739483, 9.893360999722088) 7902 max(CI)-mean: 0.43270680640528625 %
+thr persistence_categories 9.849658314350844 (9.810206875658178, 9.88910975304351) 7903 max(CI)-mean: 0.40053611438668446 %
+-------------------------------------------------------------------------------------
+True 13 2
+rt Client_think 1.3187277647440283 (1.313096870237539, 1.3243586592505177) 3898 max(CI)-mean: 0.42699446064839114 %
+rt webui_index 0.31726216111256417 (0.3143111730988357, 0.32021314912629256) 3898 max(CI)-mean: 0.9301418118630883 %
+rt persistence_categories 0.12562263757278272 (0.12436711316778241, 0.126878161977783) 3898 max(CI)-mean: 0.9994412068229905 %
+thr Client_think 9.852310543830804 (9.809818474920098, 9.89480261274151) 7914 max(CI)-mean: 0.43129039347336584 %
+thr webui_index 9.851486816611947 (9.808898947274862, 9.894074685949032) 7915 max(CI)-mean: 0.43229890198169757 %
+thr persistence_categories 9.850092639380204 (9.810665467998522, 9.889519810761886) 7917 max(CI)-mean: 0.4002720870264112 %
+Signal handled: Terminated.
+-------------------------------------------------------------------------------------
+terminate client forcibly
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC2--taskwebui--port3000--persistencelocalhost:3001--authlocalhost:3002--imagelocalhost:3003
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC2--taskpersistence--port3001
+killing memcached memcached-c2048-t20
+
+==> /home/giulio/out.18.2.txt <==
+-------------------------------------------------------------------------------------
+False 18 2
+rt Client_think 1.557377610357494 (1.5514214702354205, 1.5633337504795672) 5149 max(CI)-mean: 0.38244675424004115 %
+rt webui_index 0.5524927724220993 (0.5475192235266513, 0.5574663213175473) 5149 max(CI)-mean: 0.9002016213975453 %
+rt persistence_categories 0.22885106606194033 (0.22655939405540634, 0.23114273806847435) 5149 max(CI)-mean: 1.0013813988149651 %
+thr Client_think 11.552688654550911 (11.507346164283001, 11.59803114481882) 8915 max(CI)-mean: 0.39248430926984246 %
+thr webui_index 11.551617124696188 (11.506627719517649, 11.596606529874727) 8916 max(CI)-mean: 0.389464130371462 %
+thr persistence_categories 11.550072894471226 (11.512584378421971, 11.58756141052048) 8918 max(CI)-mean: 0.32457384807674744 %
+-------------------------------------------------------------------------------------
+False 18 2
+rt Client_think 1.5572656426259919 (1.5513144324847503, 1.5632168527672334) 5157 max(CI)-mean: 0.38215767293280345 %
+rt webui_index 0.5523566027485582 (0.5473870728458707, 0.5573261326512459) 5157 max(CI)-mean: 0.8996959351909531 %
+rt persistence_categories 0.22878537053622303 (0.22649644289573181, 0.23107429817671424) 5158 max(CI)-mean: 1.0004694072555709 %
+thr Client_think 11.553564093947221 (11.508256684194848, 11.598871503699595) 8928 max(CI)-mean: 0.3921509361436754 %
+thr webui_index 11.552618807630548 (11.507661891582382, 11.597575723678714) 8930 max(CI)-mean: 0.3891491340341983 %
+thr persistence_categories 11.551250466592004 (11.513765550921214, 11.588735382262794) 8931 max(CI)-mean: 0.3245095912273921 %
+-------------------------------------------------------------------------------------
+True 18 2
+rt Client_think 1.5570972215522005 (1.5511527995747572, 1.563041643529644) 5166 max(CI)-mean: 0.38176305854027875 %
+rt webui_index 0.5522930821123071 (0.5473292822201348, 0.5572568820044794) 5166 max(CI)-mean: 0.8987619169857634 %
+rt persistence_categories 0.2287548090380966 (0.2264682542945789, 0.2310413637816143) 5166 max(CI)-mean: 0.9995657591342211 %
+thr Client_think 11.554859635387562 (11.509597459098604, 11.60012181167652) 8942 max(CI)-mean: 0.3917155008126557 %
+thr webui_index 11.554089316334883 (11.509164102156303, 11.599014530513463) 8943 max(CI)-mean: 0.38882522844155026 %
+thr persistence_categories 11.552499161355241 (11.51501497423486, 11.589983348475622) 8944 max(CI)-mean: 0.3244682089722244 %
+Signal handled: Terminated.
+-------------------------------------------------------------------------------------
+terminate client forcibly
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC2--taskwebui--port3000--persistencelocalhost:3001--authlocalhost:3002--imagelocalhost:3003
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC2--taskpersistence--port3001
+killing memcached memcached-c2048-t20
+
+==> /home/giulio/out.20.2.txt <==
+-------------------------------------------------------------------------------------
+False 20 2
+rt Client_think 1.6910087137149763 (1.6842394777056244, 1.6977779497243284) 4662 max(CI)-mean: 0.4003075770367117 %
+rt webui_index 0.6919984786528385 (0.685927669483675, 0.698069287822002) 4662 max(CI)-mean: 0.8772864907133809 %
+rt persistence_categories 0.2949546997450194 (0.29199857703299126, 0.29791082245704764) 4662 max(CI)-mean: 1.0022293981359545 %
+thr Client_think 11.821901018553698 (11.771817625541251, 11.871984411566144) 7888 max(CI)-mean: 0.4236492331803816 %
+thr webui_index 11.820909398242046 (11.770718013191054, 11.871100783293038) 7889 max(CI)-mean: 0.4245983397728782 %
+thr persistence_categories 11.819664511767469 (11.77831184198543, 11.861017181549508) 7890 max(CI)-mean: 0.34986331245586016 %
+-------------------------------------------------------------------------------------
+False 20 2
+rt Client_think 1.6911884158114976 (1.6844251766282783, 1.6979516549947171) 4669 max(CI)-mean: 0.3999104487700895 %
+rt webui_index 0.6921047277460114 (0.6860397121306664, 0.6981697433613564) 4669 max(CI)-mean: 0.8763147211979085 %
+rt persistence_categories 0.2950177384480938 (0.29206404204434544, 0.29797143485184224) 4669 max(CI)-mean: 1.0011928161628527 %
+thr Client_think 11.820675105485192 (11.770637682558016, 11.870712528412367) 7901 max(CI)-mean: 0.4233042739154261 %
+thr webui_index 11.8196852719065 (11.769555403940902, 11.869815139872099) 7902 max(CI)-mean: 0.4241218510678014 %
+thr persistence_categories 11.818526955201243 (11.777213608396822, 11.859840302005663) 7903 max(CI)-mean: 0.34956426432008736 %
+-------------------------------------------------------------------------------------
+True 20 2
+rt Client_think 1.691042949037005 (1.6842865402962888, 1.697799357777721) 4678 max(CI)-mean: 0.3995409309127072 %
+rt webui_index 0.6919764403805961 (0.6859168808320304, 0.6980359999291619) 4678 max(CI)-mean: 0.8756887077301221 %
+rt persistence_categories 0.29497089916867697 (0.2920212574869713, 0.29792054085038266) 4678 max(CI)-mean: 0.9999771808062203 %
+thr Client_think 11.822317705042295 (11.772336437188647, 11.872298972895942) 7914 max(CI)-mean: 0.4227704676920517 %
+thr webui_index 11.821014950515885 (11.770922178099168, 11.871107722932601) 7916 max(CI)-mean: 0.4237603338326757 %
+thr persistence_categories 11.819858514401242 (11.778582725362877, 11.861134303439606) 7917 max(CI)-mean: 0.34920713296249684 %
+Signal handled: Terminated.
+-------------------------------------------------------------------------------------
+terminate client forcibly
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC2--taskwebui--port3000--persistencelocalhost:3001--authlocalhost:3002--imagelocalhost:3003
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC2--taskpersistence--port3001
+killing memcached memcached-c2048-t20
+
+==> /home/giulio/out.15.2.txt <==
+-------------------------------------------------------------------------------------
+False 15 2
+rt Client_think 1.3922798691636544 (1.3870363898801183, 1.3975233484471903) 4828 max(CI)-mean: 0.37661101044904327 %
+rt webui_index 0.39294842677894426 (0.3893581006916023, 0.3965387528662862) 4828 max(CI)-mean: 0.9136888819666165 %
+rt persistence_categories 0.15769333959584939 (0.15611455446424327, 0.15927212472745553) 4828 max(CI)-mean: 1.0011742637021916 %
+thr Client_think 10.768075536225437 (10.726606002838704, 10.80954506961217) 8968 max(CI)-mean: 0.385115550566333 %
+thr webui_index 10.767086631731477 (10.72589221895511, 10.808281044507844) 8970 max(CI)-mean: 0.38259572143650766 %
+thr persistence_categories 10.765960609438853 (10.729871237721126, 10.80204998115658) 8971 max(CI)-mean: 0.3352173858604557 %
+-------------------------------------------------------------------------------------
+False 15 2
+rt Client_think 1.392299224915231 (1.3870603186285573, 1.3975381312019048) 4835 max(CI)-mean: 0.37627732551476134 %
+rt webui_index 0.3929580213060469 (0.38936905554667844, 0.39654698706541536) 4835 max(CI)-mean: 0.9133203967792957 %
+rt persistence_categories 0.15768924911661808 (0.15611160252738604, 0.1592668957058501) 4835 max(CI)-mean: 1.0004782178049905 %
+thr Client_think 10.767768993801747 (10.726315323222085, 10.809222664381409) 8982 max(CI)-mean: 0.38497919674469006 %
+thr webui_index 10.767015512506449 (10.725857324466388, 10.80817370054651) 8983 max(CI)-mean: 0.3822618068326708 %
+thr persistence_categories 10.76581691342905 (10.729755035253705, 10.801878791604397) 8984 max(CI)-mean: 0.3349664820173848 %
+-------------------------------------------------------------------------------------
+True 15 2
+rt Client_think 1.3923158956921766 (1.3870818397369118, 1.3975499516474414) 4842 max(CI)-mean: 0.37592445589819007 %
+rt webui_index 0.39301916642850604 (0.38943407939529073, 0.3966042534617213) 4842 max(CI)-mean: 0.9121913991610412 %
+rt persistence_categories 0.15772411284047883 (0.1561480985779918, 0.15930012710296587) 4843 max(CI)-mean: 0.9992221443534239 %
+thr Client_think 10.767919353643185 (10.726494232141393, 10.809344475144977) 8995 max(CI)-mean: 0.38470869014984177 %
+thr webui_index 10.767092829349592 (10.72596528287184, 10.808220375827343) 8996 max(CI)-mean: 0.381974476579634 %
+thr persistence_categories 10.76558852950982 (10.729562387510526, 10.801614671509114) 8998 max(CI)-mean: 0.3346416398930874 %
+Signal handled: Terminated.
+-------------------------------------------------------------------------------------
+terminate client forcibly
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC2--taskwebui--port3000--persistencelocalhost:3001--authlocalhost:3002--imagelocalhost:3003
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC2--taskpersistence--port3001
+killing memcached memcached-c2048-t20
+*****************
+==> /home/giulio/out.14.2.txt <==
+-------------------------------------------------------------------------------------
+False 14 2
+rt Client_think 1.352981134218622 (1.347700955333219, 1.3582613131040249) 4568 max(CI)-mean: 0.3902625655199777 %
+rt webui_index 0.3537809279089492 (0.3505931047142896, 0.35696875110360876) 4568 max(CI)-mean: 0.9010726534924965 %
+rt persistence_categories 0.14121973713218086 (0.13980543814672702, 0.14263403611763473) 4568 max(CI)-mean: 1.0014881872567782 %
+thr Client_think 10.341483661610445 (10.300342391178125, 10.382624932042765) 8835 max(CI)-mean: 0.3978275436922457 %
+thr webui_index 10.34046406338427 (10.299601082843784, 10.381327043924754) 8836 max(CI)-mean: 0.3951754997648643 %
+thr persistence_categories 10.339369247019789 (10.302820567147956, 10.375917926891622) 8837 max(CI)-mean: 0.3534904209206771 %
+-------------------------------------------------------------------------------------
+False 14 2
+rt Client_think 1.3529060959900117 (1.3476303367132014, 1.358181855266822) 4575 max(CI)-mean: 0.3899575360364983 %
+rt webui_index 0.3537819938723811 (0.3505962406194368, 0.35696774712532536) 4575 max(CI)-mean: 0.900484848896374 %
+rt persistence_categories 0.14120778586063332 (0.13979482525683093, 0.1426207464644357) 4575 max(CI)-mean: 1.0006251391810124 %
+thr Client_think 10.342224231464739 (10.301115353544077, 10.3833331093854) 8849 max(CI)-mean: 0.39748585024480504 %
+thr webui_index 10.34135683881418 (10.300514910063834, 10.382198767564526) 8850 max(CI)-mean: 0.3949378150945767 %
+thr persistence_categories 10.340112994350303 (10.303594272646224, 10.376631716054382) 8851 max(CI)-mean: 0.3531752672725347 %
+-------------------------------------------------------------------------------------
+True 14 2
+rt Client_think 1.3529914764903326 (1.34771859225875, 1.3582643607219151) 4582 max(CI)-mean: 0.38972043233121134 %
+rt webui_index 0.3537362271057421 (0.35055368523884695, 0.35691876897263725) 4582 max(CI)-mean: 0.8996935069202836 %
+rt persistence_categories 0.14118806270422107 (0.13977662515312814, 0.14259950025531398) 4582 max(CI)-mean: 0.9996861803039042 %
+thr Client_think 10.341571681149608 (10.300485128792486, 10.38265823350673) 8862 max(CI)-mean: 0.39729504976514785 %
+thr webui_index 10.340404724290984 (10.299574877261344, 10.381234571320624) 8863 max(CI)-mean: 0.3948573399039695 %
+thr persistence_categories 10.339313249840178 (10.30280655132778, 10.375819948352575) 8864 max(CI)-mean: 0.35308629915977946 %
+Signal handled: Terminated.
+-------------------------------------------------------------------------------------
+terminate client forcibly
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC2--taskwebui--port3000--persistencelocalhost:3001--authlocalhost:3002--imagelocalhost:3003
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC2--taskpersistence--port3001
+killing memcached memcached-c2048-t20
+
+==> /home/giulio/out.19.2.txt <==
+-------------------------------------------------------------------------------------
+False 19 2
+rt Client_think 1.6177178697574541 (1.6113367907414735, 1.624098948773435) 4904 max(CI)-mean: 0.3944494361638943 %
+rt webui_index 0.6179559295507658 (0.6124811248754851, 0.6234307342260467) 4904 max(CI)-mean: 0.8859539027743999 %
+rt persistence_categories 0.25893520444563184 (0.25634199330694346, 0.2615284155843202) 4904 max(CI)-mean: 1.0014903706277878 %
+thr Client_think 11.73936637139894 (11.691041681567071, 11.78769106123081) 8355 max(CI)-mean: 0.41164649183796026 %
+thr webui_index 11.738599640933558 (11.690374426688923, 11.786824855178192) 8356 max(CI)-mean: 0.41082595641535646 %
+thr persistence_categories 11.736795915110863 (11.696680082231879, 11.776911747989846) 8357 max(CI)-mean: 0.3417954369244458 %
+-------------------------------------------------------------------------------------
+False 19 2
+rt Client_think 1.6175846745466704 (1.6112106370566717, 1.6239587120366692) 4912 max(CI)-mean: 0.3940466048112809 %
+rt webui_index 0.6179489329340132 (0.6124781531209658, 0.6234197127470608) 4912 max(CI)-mean: 0.8853126078027785 %
+rt persistence_categories 0.2589107328003121 (0.25632031159102275, 0.2615011540096015) 4912 max(CI)-mean: 1.000507464975299 %
+thr Client_think 11.73977132385165 (11.691480795589468, 11.788061852113833) 8368 max(CI)-mean: 0.4113413023988846 %
+thr webui_index 11.738926067558939 (11.69073218824541, 11.787119946872469) 8369 max(CI)-mean: 0.41054760065927937 %
+thr persistence_categories 11.737236160892039 (11.697158784909577, 11.7773135368745) 8371 max(CI)-mean: 0.3414549680443287 %
+-------------------------------------------------------------------------------------
+True 19 2
+rt Client_think 1.6176477866549683 (1.6112771416639207, 1.6240184316460158) 4919 max(CI)-mean: 0.3938215131626954 %
+rt webui_index 0.6179053702442061 (0.6124407526944897, 0.6233699877939224) 4919 max(CI)-mean: 0.8843777401637686 %
+rt persistence_categories 0.25888531899917994 (0.2562981876929315, 0.26147245030542837) 4920 max(CI)-mean: 0.9993348855199591 %
+thr Client_think 11.739936356404147 (11.691683281674136, 11.788189431134159) 8381 max(CI)-mean: 0.41101649331931245 %
+thr webui_index 11.73896444762585 (11.690793202584613, 11.787135692667087) 8383 max(CI)-mean: 0.4103534451966029 %
+thr persistence_categories 11.737564117857534 (11.697516049719042, 11.777612185996027) 8384 max(CI)-mean: 0.34119573479103354 %
+Signal handled: Terminated.
+-------------------------------------------------------------------------------------
+terminate client forcibly
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC2--taskwebui--port3000--persistencelocalhost:3001--authlocalhost:3002--imagelocalhost:3003
+killing java /usr/lib/java/jdk-15.0.2/bin/java-Xmx4G-Djava.compiler=NONE-jar-Xint../ras_teastore_server/target/ras_teastore_server-0.0.1-SNAPSHOT-jar-with-dependencies.jar--cpuEmu0--jedisHostlocalhost--NC2--taskpersistence--port3001
+killing memcached memcached-c2048-t20
