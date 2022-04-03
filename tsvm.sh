@@ -45,8 +45,8 @@ sudo update-alternatives --set javap /usr/lib/java/jdk-15.0.2/bin/javap
 #docker network create teastore-network
 
 cd 
-#git clone https://github.com/giulio-garbi/fitMS
-git clone https://github.com/giulio-garbi/fitMS-scripts
+git clone https://github.com/giulio-garbi/fitMS
+#git clone https://github.com/giulio-garbi/fitMS-scripts
 cd fitMS
 cd jni_lib
 JAVA_HOME="/usr/lib/java/jdk-15.0.2" ./gccInstr.sh
