@@ -9,14 +9,11 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.lang3.ArrayUtils;
-
 import com.google.common.net.InetAddresses;
 import com.google.common.net.InternetDomainName;
 import com.google.gson.Gson;
 
 import Server.SimpleTask;
-import experiment.RandomStep;
 import experiment.SinGen;
 import gnu.getopt.Getopt;
 import gnu.getopt.LongOpt;
@@ -75,9 +72,11 @@ public class Main {
 		clientEntries_stimes.put("think", 1000l);
 		final SimpleTask client = new SimpleTask(clientEntries, clientEntries_stimes, Main.initPop, "Client",
 				Main.jedisHost);
-		ScheduledExecutorService se = Executors.newSingleThreadScheduledExecutor();
+		//ScheduledExecutorService se = Executors.newSingleThreadScheduledExecutor();
 		rtSampler rts = new rtSampler(jedisHost, "Client_think");
-		se.scheduleAtFixedRate(rts, 0, 100, TimeUnit.MILLISECONDS);
+		Thread th_rtss = new Thread(rts);
+		th_rtss.start();
+		//se.scheduleAtFixedRate(rts, 0, 100, TimeUnit.MILLISECONDS);
 		client.setRts("think",rts);
 		return new SimpleTask[] { client };
 	}
