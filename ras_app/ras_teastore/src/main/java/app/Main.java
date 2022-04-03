@@ -69,7 +69,7 @@ public class Main {
 		HashMap<String, Long> clientEntries_stimes = new HashMap<String, Long>();
 		Client.setWebuiHost(Main.webuiHost);
 		clientEntries.put("think", Client.class);
-		clientEntries_stimes.put("think", 1000l);
+		clientEntries_stimes.put("think", 100l);
 		final SimpleTask client = new SimpleTask(clientEntries, clientEntries_stimes, Main.initPop, "Client",
 				Main.jedisHost);
 		//ScheduledExecutorService se = Executors.newSingleThreadScheduledExecutor();
