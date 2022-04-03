@@ -1,4 +1,5 @@
 # Ubuntu 21.10
+cd 
 sudo apt update
 sudo apt install -y python3-pip memcached cgroup-tools build-essential 
 sudo service memcached stop
